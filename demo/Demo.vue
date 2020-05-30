@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <button @click="createToast">Create a toast message</button>
+    <button class="py-2 mb-4 rounded-lg px-4 bg-blue-400" @click="createToast">
+      Create a toast message
+    </button>
+    <button class="py-2 rounded-lg px-4 bg-blue-400" @click="updateConfig">
+      Update config
+    </button>
   </div>
 </template>
 
@@ -11,7 +16,13 @@ export default {
   methods: {
     createToast() {
       this.$toasts.push({
-        message: "Test message"
+        message: "Test message",
+        badge: "My  badge"
+      });
+    },
+    updateConfig() {
+      this.$toasts.updateConfig({
+        position: "bottom-left"
       });
     }
   }
@@ -25,5 +36,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 </style>
