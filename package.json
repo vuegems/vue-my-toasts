@@ -1,15 +1,30 @@
 {
-  "name": "vue-my-toast",
+  "name": "vue-my-toasts",
   "version": "0.1.0",
-  "private": true,
+  "author": "Yaël GUILLOUX <yael.guilloux@gmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "demo": "vue-cli-service demo --watch",
+    "docs": "npm run docs:serve",
+    "docs:build": "vue-cli-service docs --mode build",
+    "docs:serve": "vue-cli-service docs --mode serve",
+    "prepublish": "vue-cli-service lint && vue-cli-service docs --mode build && vue-cli-service build",
+    "start": "vue-cli-service serve"
   },
+  "main": "dist/vue-my-toasts.common.js",
+  "module": "dist/vue-my-toasts.esm.js",
+  "unpkg": "dist/vue-my-toasts.umd.min.js",
+  "files": [
+    "dist/vue-my-toasts.common.js",
+    "dist/vue-my-toasts.umd.min.js",
+    "dist/vue-my-toasts.umd.js",
+    "dist/vue-my-toasts.esm.js",
+    "src"
+  ],
   "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "core-js": "^3.6.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
@@ -21,6 +36,10 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-vue": "^6.2.2",
     "prettier": "^1.19.1",
-    "vue-template-compiler": "^2.6.11"
-  }
+    "vue-cli-plugin-p11n": "~0.4.0",
+    "vue-template-compiler": "^2.6.11",
+    "vue": "^2.6.11"
+  },
+  "jsdelivr": "dist/vue-my-toasts.umd.min.js",
+  "sideeffects": false
 }

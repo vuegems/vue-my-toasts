@@ -1,4 +1,4 @@
-# vue-my-toast
+# vue-my-toasts
 
 ## Project setup
 ```
