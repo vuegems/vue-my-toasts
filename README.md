@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./resources/vue-catch-hrefs.png" width="400">
+    <img src="./resources/vue-my-toasts.png" width="400">
 </p>
 
 ---
