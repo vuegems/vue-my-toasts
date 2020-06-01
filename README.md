@@ -6,7 +6,9 @@
 
 # vue-my-toasts
 
-A Vue toast plugin that finally lets you create your own Toast component.
+A Vue toast plugin that finally lets you create your own toast component.
+
+You can see a demo of the default behaviour [here](https://vue-my-toasts.netlify.app).
 
 ## Why another toast plugin ?
 
