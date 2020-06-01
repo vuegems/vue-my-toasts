@@ -41,7 +41,7 @@ import VueMyToasts from "vue-my-toasts";
 import YourToastComponent from "~/components/toasts/YourToastComponent"
 
 Vue.use(VueMyToasts, {
-  component: TailwindComponent,
+  component: YourToastComponent,
   options: {
     width: "400px",
     position: "bottom-right"
