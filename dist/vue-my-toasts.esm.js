@@ -1,7 +1,7 @@
 /*!
  * vue-my-toasts v0.1.0 
  * (c) 2020 Yaël GUILLOUX <yael.guilloux@gmail.com>
- * Released under the undefined License.
+ * Released under the [object Object] License.
  */
 function _typeof(obj) {
   "@babel/helpers - typeof";
@@ -67,6 +67,15 @@ function _objectSpread2(target) {
 
   return target;
 }
+
+/**
+ * Get a toast uuid, useful when no `id` is provided by the user.
+ *
+ * @returns {string}
+ */
+var getUuid = (function () {
+  return "toast-" + Date.now() + "-" + Math.floor(Math.random() * 10);
+});
 
 /*!
  * Vue.js v2.6.11
@@ -8518,9 +8527,16 @@ if (inBrowser) {
 //
 //
 //
+//
+//
 var script = {
   name: "MyToasts",
   props: {
+    padding: {
+      type: String,
+      required: false,
+      default: "1rem"
+    },
     width: {
       type: String,
       required: false,
@@ -8709,21 +8725,22 @@ const __vue_script__ = script;
 
 /* template */
 var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:['vue-my-toasts', _vm.position],style:({
-    '--vueMyToastsWidth': _vm.width
-  }),attrs:{"id":"vue-my-toasts-root"}},[_c('transition-group',{class:['vue-my-toasts-wrapper', _vm.position],attrs:{"duration":"350","name":_vm.position.includes('middle') ? 'fade-vertical' : 'fade-horizontal',"tag":"ul"}},_vm._l((_vm.toasts),function(toast){return _c('my-toasts-component',_vm._b({key:toast.id,class:[
+    '--vueMyToastsWidth': _vm.width,
+    '--vueMyToastsPadding': _vm.padding
+  }),attrs:{"id":"vue-my-toasts-root"}},[_c('transition-group',{class:['vue-my-toasts-wrapper', _vm.position],attrs:{"duration":"350","name":_vm.position.includes('middle') ? 'fade-vertical' : 'fade-horizontal',"tag":"ul"}},_vm._l((_vm.toasts),function(toast,index){return _c('my-toasts-component',_vm._b({key:toast.id,class:[
         _vm.position.includes('middle') ? 'fade-vertical' : 'fade-horizontal',
         _vm.position
-      ],attrs:{"position":_vm.position},on:{"remove":function($event){return _vm.remove(toast.id)}}},'my-toasts-component',toast,false))}),1)],1)};
+      ],attrs:{"index":index,"position":_vm.position},on:{"remove":function($event){return _vm.remove(toast.id)}}},'my-toasts-component',toast,false))}),1)],1)};
 var __vue_staticRenderFns__ = [];
 
   /* style */
   const __vue_inject_styles__ = function (inject) {
     if (!inject) return
-    inject("data-v-88cb37c0_0", { source: ".vue-my-toasts[data-v-88cb37c0]{max-width:var(--vueMyToastsWidth);position:fixed;z-index:999999}.vue-my-toasts-wrapper[data-v-88cb37c0]{width:100%;display:flex;align-items:stretch;justify-content:stretch}.vue-my-toasts-wrapper.top-left[data-v-88cb37c0],.vue-my-toasts-wrapper.top-middle[data-v-88cb37c0],.vue-my-toasts-wrapper.top-right[data-v-88cb37c0]{flex-direction:column}.vue-my-toasts-wrapper.bottom-left[data-v-88cb37c0],.vue-my-toasts-wrapper.bottom-middle[data-v-88cb37c0],.vue-my-toasts-wrapper.bottom-right[data-v-88cb37c0]{flex-direction:column-reverse}.vue-my-toasts.bottom-right[data-v-88cb37c0]{bottom:0;right:0}.vue-my-toasts.bottom-left[data-v-88cb37c0]{bottom:0;left:0}.vue-my-toasts.bottom-left[data-v-88cb37c0]{bottom:0;left:0}.vue-my-toasts.top-right[data-v-88cb37c0]{top:0;right:0}.vue-my-toasts.top-left[data-v-88cb37c0]{top:0;left:0}.vue-my-toasts.top-middle[data-v-88cb37c0]{top:0;left:50%;transform:translateX(-50%)}.vue-my-toasts.bottom-middle[data-v-88cb37c0]{bottom:0;left:50%;transform:translateX(-50%)}.fade-horizontal-enter.top-left[data-v-88cb37c0],.fade-horizontal-leave-to.top-left[data-v-88cb37c0]{transform:translateX(-325px)}.fade-horizontal-enter.bottom-left[data-v-88cb37c0],.fade-horizontal-leave-to.bottom-left[data-v-88cb37c0]{transform:translateX(-325px)}.fade-horizontal-enter.top-right[data-v-88cb37c0],.fade-horizontal-leave-to.top-right[data-v-88cb37c0]{transform:translateX(325px)}.fade-horizontal-enter.bottom-right[data-v-88cb37c0],.fade-horizontal-leave-to.bottom-right[data-v-88cb37c0]{transform:translateX(325px)}.fade-vertical-enter.top-middle[data-v-88cb37c0],.fade-vertical-leave-to.top-middle[data-v-88cb37c0]{transform:translateY(-35px)}.fade-vertical-enter.bottom-middle[data-v-88cb37c0],.fade-vertical-leave-to.bottom-middle[data-v-88cb37c0]{transform:translateY(35px)}.fade-horizontal[data-v-88cb37c0],.fade-vertical[data-v-88cb37c0]{transition:all .35s ease-out}.fade-horizontal-enter[data-v-88cb37c0],.fade-horizontal-leave-to[data-v-88cb37c0],.fade-vertical-enter[data-v-88cb37c0],.fade-vertical-leave-to[data-v-88cb37c0]{opacity:0}.fade-horizontal-leave-active[data-v-88cb37c0],.fade-vertical-leave-active[data-v-88cb37c0]{transition:all .35s ease-in}", map: undefined, media: undefined });
+    inject("data-v-be858e4a_0", { source: "dl[data-v-be858e4a],ol[data-v-be858e4a],ul[data-v-be858e4a]{margin-bottom:0;margin-block-start:0;margin-inline-start:0;margin-inline-end:0;padding-inline-start:0;list-style-type:none}#vue-my-toasts-root[data-v-be858e4a]{max-width:var(--vueMyToastsWidth);width:var(--vueMyToastsWidth);padding:var(--vueMyToastsPadding);position:fixed;z-index:999999}.vue-my-toasts-wrapper[data-v-be858e4a]{width:100%;display:flex;align-items:stretch;justify-content:stretch}.vue-my-toasts-wrapper.top-left[data-v-be858e4a],.vue-my-toasts-wrapper.top-middle[data-v-be858e4a],.vue-my-toasts-wrapper.top-right[data-v-be858e4a]{flex-direction:column}.vue-my-toasts-wrapper.bottom-left[data-v-be858e4a],.vue-my-toasts-wrapper.bottom-middle[data-v-be858e4a],.vue-my-toasts-wrapper.bottom-right[data-v-be858e4a]{flex-direction:column-reverse}.vue-my-toasts.bottom-right[data-v-be858e4a]{bottom:0;right:0}.vue-my-toasts.bottom-left[data-v-be858e4a]{bottom:0;left:0}.vue-my-toasts.bottom-left[data-v-be858e4a]{bottom:0;left:0}.vue-my-toasts.top-right[data-v-be858e4a]{top:0;right:0}.vue-my-toasts.top-left[data-v-be858e4a]{top:0;left:0}.vue-my-toasts.top-middle[data-v-be858e4a]{top:0;left:50%;transform:translateX(-50%)}.vue-my-toasts.bottom-middle[data-v-be858e4a]{bottom:0;left:50%;transform:translateX(-50%)}.fade-horizontal-enter.top-left[data-v-be858e4a],.fade-horizontal-leave-to.top-left[data-v-be858e4a]{transform:translateX(-325px)}.fade-horizontal-enter.bottom-left[data-v-be858e4a],.fade-horizontal-leave-to.bottom-left[data-v-be858e4a]{transform:translateX(-325px)}.fade-horizontal-enter.top-right[data-v-be858e4a],.fade-horizontal-leave-to.top-right[data-v-be858e4a]{transform:translateX(325px)}.fade-horizontal-enter.bottom-right[data-v-be858e4a],.fade-horizontal-leave-to.bottom-right[data-v-be858e4a]{transform:translateX(325px)}.fade-vertical-enter.top-middle[data-v-be858e4a],.fade-vertical-leave-to.top-middle[data-v-be858e4a]{transform:translateY(-35px)}.fade-vertical-enter.bottom-middle[data-v-be858e4a],.fade-vertical-leave-to.bottom-middle[data-v-be858e4a]{transform:translateY(35px)}.fade-horizontal[data-v-be858e4a],.fade-vertical[data-v-be858e4a]{transition:all .35s ease-out}.fade-horizontal-enter[data-v-be858e4a],.fade-horizontal-leave-to[data-v-be858e4a],.fade-vertical-enter[data-v-be858e4a],.fade-vertical-leave-to[data-v-be858e4a]{opacity:0}.fade-horizontal-leave-active[data-v-be858e4a],.fade-vertical-leave-active[data-v-be858e4a]{transition:all .35s ease-in}", map: undefined, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__ = "data-v-88cb37c0";
+  const __vue_scope_id__ = "data-v-be858e4a";
   /* module identifier */
   const __vue_module_identifier__ = undefined;
   /* functional template */
@@ -8743,305 +8760,13 @@ var __vue_staticRenderFns__ = [];
     undefined
   );
 
-var ToastMixin = {
-  props: {
-    /**
-     * The id of the toast
-     */
-    id: {
-      type: String,
-      required: true
-    },
-
-    /**
-     * The type of the toast
-     * Accepts: "base", "warning", "error", "success"
-     */
-    type: {
-      type: String,
-      required: false,
-      default: "base",
-      validator: function validator(x) {
-        return ["base", "warning", "error", "success"].includes(x);
-      }
-    },
-
-    /**
-     * The current position from the parent plugin options
-     */
-    position: {
-      type: String,
-      required: false,
-      default: "bottom-right"
-    },
-
-    /**
-     * The message to show on the toast
-     */
-    message: {
-      type: String,
-      required: true
-    }
-  }
-};
-
-var TimerMixin = {
-  props: {
-    duration: {
-      type: Number,
-      required: false,
-      default: 3000 // Default timing: 3 seconds
-
-    }
-  },
-  data: function data() {
-    return {
-      start: null,
-      elapsed: null,
-      hovered: false
-    };
-  },
-  computed: {
-    /**
-     * Return the elapsed timer percentage
-     *
-     * @returns { string }
-     */
-    percentageElapsed: function percentageElapsed() {
-      return (this.elapsed / this.duration * 100).toFixed(1);
-    },
-
-    /**
-     * Return the remaining time as milliseconds
-     *
-     * @returns { number }
-     */
-    remaining: function remaining() {
-      return this.duration - this.elapsed;
-    }
-  },
-
-  /**
-   * Attach the event listeners for hovering management
-   * and start the timer and requestAnimationFrame loop.
-   */
-  mounted: function mounted() {
-    var _this = this;
-
-    // Hover event
-    this.$el.addEventListener("mouseover", function () {
-      _this.hovered = true;
-    }); // Mouse out event
-
-    this.$el.addEventListener("mouseout", function () {
-      _this.hovered = false;
-    }); // Set start timestampp
-
-    this.start = Date.now(); // Initialize elapsed time
-
-    this.elapsed = 0; // Start requestAnimationFrame loop
-
-    requestAnimationFrame(this.updateTimer);
-  },
-
-  /**
-   * Remove event listeners for hovering management
-   */
-  beforeDestroy: function beforeDestroy() {
-    var _this2 = this;
-
-    // Hover event
-    this.$el.removeEventListener("mouseover", function () {
-      _this2.hovered = true;
-    }); // Mouse out event
-
-    this.$el.removeEventListener("mouseout", function () {
-      _this2.hovered = false;
-    });
-  },
-  methods: {
-    /**
-     * Update timer loop
-     */
-    updateTimer: function updateTimer() {
-      // Check if the toast is hovered
-      if (!this.hovered) {
-        // Update elapsed time
-        this.elapsed = Date.now() - this.start; // Check if elapsed time is longer than showing duration
-
-        if (this.elapsed >= this.duration) {
-          // Emit the `remove` event
-          this.$emit("remove");
-        }
-      } else {
-        // Pause the timer by keeping the elapsed time the same by updating started time
-        this.start = Date.now() - this.elapsed;
-      } // Call another aniationFrame
-
-
-      requestAnimationFrame(this.updateTimer);
-    }
-  }
-};
-
-//
-var script$1 = {
-  name: "DemoToast",
-  mixins: [ToastMixin, TimerMixin],
-  props: {
-    badge: {
-      type: [String, Boolean],
-      required: false,
-      default: false
-    }
-  },
-  computed: {
-    color: function color() {
-      switch (this.type) {
-        case "base":
-          return "blue";
-
-        case "warning":
-          return "orange";
-
-        case "error":
-          return "red";
-
-        case "success":
-          return "green";
-
-        default:
-          return "blue";
-      }
-    }
-  }
-};
-
-/* script */
-const __vue_script__$1 = script$1;
-
-/* template */
-var __vue_render__$1 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{staticClass:"relative overflow-hidden p-3 bg-gray-800 items-center text-indigo-100 leading-none rounded-lg my-2 mx-4 flex lg:inline-flex cursor-pointer select-none",class:[("bg-" + _vm.color + "-400")],attrs:{"role":"alert"},on:{"click":function($event){return _vm.$emit('remove')}}},[_c('div',{staticClass:"absolute bg-white opacity-25 left-0 bottom-0 h-1",style:({ width: _vm.percentageElapsed + '%' })}),_vm._v(" "),_c('span',{staticClass:"font-semibold mr-2 text-left flex-1"},[_vm._v(_vm._s(_vm.message))]),_vm._v(" "),_c('svg',{staticClass:"block fill-current opacity-75 h-4 w-4",class:[_vm.position],attrs:{"xmlns":"http://www.w3.org/2000/svg","viewBox":"0 0 20 20"}},[_c('path',{attrs:{"d":"M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"}})])])};
-var __vue_staticRenderFns__$1 = [];
-
-  /* style */
-  const __vue_inject_styles__$1 = function (inject) {
-    if (!inject) return
-    inject("data-v-034103b2_0", { source: "svg.bottom-middle[data-v-034103b2]{transform:rotate(90deg)}svg.top-middle[data-v-034103b2]{transform:rotate(-90deg)}svg.bottom-left[data-v-034103b2]{transform:rotate(180deg)}svg.top-left[data-v-034103b2]{transform:rotate(180deg)}", map: undefined, media: undefined });
-
-  };
-  /* scoped */
-  const __vue_scope_id__$1 = "data-v-034103b2";
-  /* module identifier */
-  const __vue_module_identifier__$1 = undefined;
-  /* functional template */
-  const __vue_is_functional_template__$1 = false;
-  /* style inject SSR */
-  
-
-  
-  var TailwindComponent = normalizeComponent_1(
-    { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
-    __vue_inject_styles__$1,
-    __vue_script__$1,
-    __vue_scope_id__$1,
-    __vue_is_functional_template__$1,
-    __vue_module_identifier__$1,
-    browser,
-    undefined
-  );
-
-// -- Package version
-
-var version = "0.1.0"; // -- Main plugin reference
-
-var instance = null; // ------------------------------------------------------------------------------
-// FUNCTIONS
-// ------------------------------------------------------------------------------
-
-/**
- * Install the plugin into Vue
- *
- * @param Vue
- * @param component
- * @param options
- */
-
-var install = function install(Vue, _ref) {
-  var component = _ref.component,
-      options = _ref.options;
-
-  // Initialize options, overriding default config by user provided one
-  var pluginOptions = _objectSpread2({
-    position: "bottom-right"
-  }, options);
-
-  var _updateConfig = function updateConfig() {
-    // Remove present root element
-    var rootEl = document.querySelector("#vue-my-toasts-root");
-
-    if (rootEl) {
-      rootEl.remove();
-    } // Get component instance & reference
-
-
-    var componentData = injectComponent(pluginOptions, component);
-    instance = componentData.instance;
-  }; // Initialize config
-
-
-  _updateConfig(); // Inject into vue prototype
-
-
-  Vue.prototype.$toasts = {
-    /**
-     * Add a new toast to the instance
-     *
-     * @param toast
-     */
-    push: function push(toast) {
-      // Check if toast id is specified
-      if (!toast.id) toast.id = getUuid(); // Add toast
-
-      instance.add(toast);
-    },
-
-    /**
-     * Remove a toast from the instance
-     *
-     * @param toastId
-     */
-    remove: function remove(toastId) {
-      // Check if toastId is specified
-      if (!toastId) {
-        console.warn("You need to provide a toastId to remove a toast programatically.");
-        return;
-      } // Remove toast from component
-
-
-      instance.remove(toastId);
-    },
-
-    /**
-     * Update the used toasts config
-     *
-     * @param newOptions
-     */
-    updateConfig: function updateConfig(newOptions) {
-      pluginOptions = _objectSpread2(_objectSpread2({}, pluginOptions), newOptions);
-
-      _updateConfig();
-    }
-  };
-};
 /**
  * Register toast handler component to root
  * @param pluginOptions
  * @returns {{reference: Vue | object | Record<never, any>, instance: Vue}}
  */
 
-
-var injectComponent = function injectComponent(pluginOptions, userComponent) {
+var injectComponent = (function (pluginOptions, userComponent) {
   // Inject user provided component
   Vue.component("my-toasts-component", userComponent); // Create toasts layer instance
 
@@ -9061,16 +8786,138 @@ var injectComponent = function injectComponent(pluginOptions, userComponent) {
     reference: component,
     instance: component.$children[0]
   };
-};
+});
+
+var instance = null;
 /**
- * Get a toast uuid, useful when no `id` is provided by the user.
+ * Add a new toast to the instance
  *
- * @returns {string}
+ * @param toast
  */
 
+var push = function push(toast) {
+  // Check if toast id is specified
+  if (!toast.id) toast.id = getUuid(); // Add toast
 
-var getUuid = function getUuid() {
-  return "toast-" + Date.now() + "-" + Math.floor(Math.random() * 10);
+  instance.add(toast);
+};
+/**
+ * Remove a toast from the instance
+ *
+ * @param toastId
+ */
+
+var remove$3 = function remove(toastId) {
+  // Check if toastId is specified
+  if (!toastId) {
+    console.warn("You need to provide a toastId to remove a toast programatically.");
+    return;
+  } // Remove toast from component
+
+
+  instance.remove(toastId);
+};
+/**
+ * Update the plugin config
+ */
+
+var updateConfig = function updateConfig(pluginOptions, component) {
+  // Remove present root element
+  var rootEl = document.querySelector("#vue-my-toasts-root"); // Delete current instance
+
+  if (rootEl) {
+    rootEl.remove();
+  } // Get component instance & reference
+
+
+  var componentData = injectComponent(pluginOptions, component);
+  instance = componentData.instance;
+};
+
+/**
+ * The following 4 functions are helpers.
+ * base(), success(), warning(), error() accepts `message` as first argument, and `options` as a second one.
+ */
+
+var helperMethods = {
+  base: function base(message) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    push(_objectSpread2({
+      type: "base",
+      message: message
+    }, options));
+  },
+  success: function success(message) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    push(_objectSpread2({
+      type: "success",
+      message: message
+    }, options));
+  },
+  warning: function warning(message) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    push(_objectSpread2({
+      type: "warning",
+      message: message
+    }, options));
+  },
+  error: function error(message) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    push(_objectSpread2({
+      type: "error",
+      message: message
+    }, options));
+  }
+};
+
+// VARIABLES
+// ------------------------------------------------------------------------------
+
+var version = "0.1.0";
+var pluginOptions = {
+  width: "400px",
+  // CSS variable
+  padding: "1rem",
+  // CSS variable
+  position: "bottom-right" // top-left, top-right, bottom-left, bottom-right, top-middle, bottom-middle
+
+}; // ------------------------------------------------------------------------------
+// FUNCTIONS
+// ------------------------------------------------------------------------------
+
+/**
+ * Install the plugin into Vue
+ *
+ * @param Vue
+ * @param component
+ * @param options
+ */
+
+var install = function install(Vue, _ref) {
+  var component = _ref.component,
+      options = _ref.options;
+  // Overriding default config by user provided one
+  pluginOptions = _objectSpread2(_objectSpread2({}, pluginOptions), options); // Initialize config
+
+  updateConfig(pluginOptions, component); // Inject into vue prototype
+
+
+  Vue.prototype.$toasts = _objectSpread2(_objectSpread2({
+    push: push,
+    remove: remove$3
+  }, helperMethods), {}, {
+    /**
+     * Update the used toasts config
+     *
+     * @param newOptions
+     */
+    updateConfig: function updateConfig$1(newOptions) {
+      var userComponent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : component;
+      pluginOptions = _objectSpread2(_objectSpread2({}, pluginOptions), newOptions);
+
+      updateConfig(pluginOptions, userComponent);
+    }
+  });
 }; // ------------------------------------------------------------------------------
 // EXPORTS
 // ------------------------------------------------------------------------------
@@ -9087,14 +8934,7 @@ var getUuid = function getUuid() {
 
 var plugin = {
   install: install,
-  version: version,
-  components: {
-    TailwindComponent: TailwindComponent
-  },
-  mixins: {
-    TimerMixin: TimerMixin,
-    ToastMixin: ToastMixin
-  }
+  version: version
 };
 /**
  * Try to auto-inject if Vue is loaded as a script tag.

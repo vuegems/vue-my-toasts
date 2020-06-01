@@ -42,7 +42,8 @@ Vue.use(VueMyToasts, {
   component: YourToastComponent,
   options: {
     width: "400px",
-    position: "bottom-right"
+    position: "bottom-right",
+    padding: "1rem"
   }
 });
 ```
@@ -61,7 +62,8 @@ Vue.use(plugin, {
   component: TailwindComponent,
   options: {
     width: "400px",
-    position: "bottom-right"
+    position: "bottom-right",
+    padding: "1rem"
   }
 });
 ```

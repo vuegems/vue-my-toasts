@@ -1,5 +1,5 @@
 import Vue from "vue";
-import MyToasts from "../components/MyToasts";
+import MyToasts from "../components/MyToasts.vue";
 
 /**
  * Register toast handler component to root
