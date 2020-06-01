@@ -1,5 +1,5 @@
 /*!
- * vue-my-toasts v0.1.0 
+ * vue-my-toasts v1.0.1 
  * (c) 2020 Yaël GUILLOUX <yael.guilloux@gmail.com>
  * Released under the [object Object] License.
  */
@@ -8873,7 +8873,7 @@ var helperMethods = {
 // VARIABLES
 // ------------------------------------------------------------------------------
 
-var version = "0.1.0";
+var version = "1.0.1";
 var pluginOptions = {
   width: "400px",
   // CSS variable

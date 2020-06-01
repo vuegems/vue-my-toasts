@@ -50,15 +50,19 @@ Vue.use(VueMyToasts, {
 
 The whole principle of this package is to build your own toast component.
 
-Still, it comes with an included component, based on Tailwind that is ready to be used, or copy pasted for your own implementation.
+It comes with two included components, based on Tailwind and Bootstrap.
+
+Both of those components are ready to be used straight from your app, or to be copy/pasted to create your own implementation.
 
 If you want to see the included component, you can watch the demo [here](https://vue-my-toasts.netlify.app).
 
 ```javascript
 import VueMyToasts from "vue-my-toasts";
-const { TailwindComponent } = VueMyToasts.components;
+// import BootstrapComponent from "vue-my-toasts/src/components/toasts/BootstrapComponent";
+import TailwindComponent from "vue-my-toasts/src/components/toasts/TailwindComponent";
 
-Vue.use(plugin, {
+Vue.use(VueMyToasts, {
+  // component: BootstrapComponent,
   component: TailwindComponent,
   options: {
     width: "400px",
