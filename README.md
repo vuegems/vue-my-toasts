@@ -12,11 +12,11 @@ You can see a demo of the default behaviour [here](https://vue-my-toasts.netlify
 
 ## Why another toast plugin ?
 
-Most toast plugins out here comes with a pre-defined style.
+Most toast plugins out here comes with a *pre-defined style*.
 
-I love some of these plugins, but you can't assume that your design will be used in every projects.
+I love some of these plugins, but you can't assume that your design will be used in *every projects*.
 
-This plugin aims to abstract what is boring in creating a toast notification plugin, and let you focus on designing your toast component while keeping a simple API to interact with.
+This plugin aims to *abstract what is boring* in creating a toast notification plugin, and let you *focus on designing* your toast component while keeping a simple API to interact with.
 
 ## Setup
 
@@ -68,6 +68,14 @@ Vue.use(plugin, {
 });
 ```
 
+### Base parameters
+
+- `width`: The max width for a toast (as CSS attribute)
+- `padding`: The padding of the box handling the toasts list (as CSS attribute)
+- `position`: The position of the toast list, can be: `bottom-right`, `bottom-left`, `top-right`, `top-left`, `top-middle`, `bottom-middle`
+
+Note that you can add as many parameters you want, they will be passed to the toast component.
+
 ## Usage
 
 vue-my-toasts come with a simple API that you can use from anywhere in your codebase.
@@ -95,6 +103,18 @@ export default {
     }
 }
 ```
+
+### API
+
+- `$toasts.base('message', options)`: Push a base message (options is facultative)
+- `$toasts.success('message', options)`: Push a success message (options is facultative)
+- `$toasts.warning('message', options)`: Push a warning message (options is facultative)
+- `$toasts.error('message', options)`: Push a error message (options is facultative)
+- `$toasts.push(options)`: Push a message from a raw toast payload
+- `$toasts.remove(id)`: Remove a toast from its unique id
+- `$toasts.updateConfig(newConfig)`: Update the toasts base config
+
+Note that you can add as many parameters you want to `options` object, they will be passed as props to your toast component.
 
 ## Create your own
 
