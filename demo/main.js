@@ -1,10 +1,10 @@
 import Vue from "vue";
 import App from "./Demo";
-import DemoToast from "./DemoToast";
 import plugin from "../src/index";
+const { TailwindComponent } = plugin.components;
 
 Vue.use(plugin, {
-  component: DemoToast,
+  component: TailwindComponent,
   options: {
     position: "bottom-right"
   }

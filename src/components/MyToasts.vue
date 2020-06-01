@@ -3,7 +3,7 @@
     id="vue-my-toasts-root"
     :class="['vue-my-toasts', position]"
     :style="{
-      width
+      '--vueMyToastsWidth': width
     }"
   >
     <transition-group
@@ -79,8 +79,13 @@ export default {
 
 <style scoped>
 .vue-my-toasts {
+  max-width: var(--vueMyToastsWidth);
   position: fixed;
   z-index: 999999;
+}
+
+@media screen and (max-device-width: var(--vueMyToastsWidth)) {
+  max-width: 100%;
 }
 
 .vue-my-toasts-wrapper {

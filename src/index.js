@@ -2,12 +2,16 @@
 // IMPORTS
 // ------------------------------------------------------------------------------
 import Vue from "vue";
-import MyToasts from "./components/MyToasts";
+import MyToasts from "./components/MyToasts.vue";
+import TailwindComponent from "./components/toasts/TailwindComponent.vue";
+import TimerMixin from "./mixins/TimerMixin";
+import ToastMixin from "./mixins/ToastMixin";
 
 // Variables
 // -- Package version
 const version = "__VERSION__";
 // -- Main plugin reference
+// eslint-disable-next-line no-unused-vars
 let reference = null;
 // -- Main plugin instance
 let instance = null;
@@ -136,13 +140,23 @@ const getUuid = () => {
 // ------------------------------------------------------------------------------
 
 /**
- * Vue plugin
+ * Vue plugin functions, default component and mixins
  *
- * @type {{install: install, version: string}}
+ * @type {{
+ *  install: install,
+ *  version: string
+ * }}
  */
 const plugin = {
   install,
-  version
+  version,
+  components: {
+    TailwindComponent
+  },
+  mixins: {
+    TimerMixin,
+    ToastMixin
+  }
 };
 
 /**
