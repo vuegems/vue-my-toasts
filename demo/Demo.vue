@@ -1,79 +1,79 @@
 <template>
-  <div id="app" class="px-4 md:px-16 lg:px-32 xl:px-64">
+  <div id="app">
     <hero />
 
-    <div class="mb-8 flex flex-col items-center">
-      <h2 class="mb-4 text-lg font-bold">Toasts types</h2>
+    <div class="mb-8 w-full flex flex-col items-center">
+      <h2 class="mb-4 text-gray-800 text-lg font-bold">Toasts types</h2>
 
       <button
-        class="w-full md:w-2/5 py-2 mb-4 rounded-lg px-4 bg-blue-400 font-bold text-white"
+        class="w-full py-2 mb-4 rounded-lg px-4 bg-blue-400 font-bold text-white"
         @click="createToast('base')"
       >
         Create a base toast
       </button>
 
       <button
-        class="w-full md:w-2/5 py-2 mb-4 rounded-lg px-4 bg-orange-400 font-bold text-white"
+        class="w-full py-2 mb-4 rounded-lg px-4 bg-orange-400 font-bold text-white"
         @click="createToast('warning')"
       >
         Create a warning toast
       </button>
 
       <button
-        class="w-full md:w-2/5 py-2 mb-4 rounded-lg px-4 bg-green-400 font-bold text-white"
+        class="w-full py-2 mb-4 rounded-lg px-4 bg-green-400 font-bold text-white"
         @click="createToast('success')"
       >
         Create a success toast
       </button>
 
       <button
-        class="w-full md:w-2/5 py-2 mb-4 rounded-lg px-4 bg-red-400 font-bold text-white"
+        class="w-full py-2 mb-4 rounded-lg px-4 bg-red-400 font-bold text-white"
         @click="createToast('error')"
       >
         Create a error toast
       </button>
     </div>
 
-    <div class="flex flex-col items-center">
-      <h2 class="mb-4 text-lg font-bold">Toasts positions</h2>
+    <div class="w-full flex flex-col items-center">
+      <h2 class="mb-4 text-gray-800 text-lg font-bold">Toasts positions</h2>
 
       <button
-        class="w-full md:w-2/5 py-2 mb-4 rounded-lg px-4 bg-blue-400 font-bold text-white"
+        class="w-full py-2 mb-4 rounded-lg px-4 bg-blue-400 font-bold text-white"
         @click="updateConfig('bottom-left')"
       >
         Bottom left
       </button>
 
       <button
-        class="w-full md:w-2/5 py-2 mb-4 rounded-lg px-4 bg-blue-400 font-bold text-white"
+        class="w-full py-2 mb-4 rounded-lg px-4 bg-blue-400 font-bold text-white"
         @click="updateConfig('bottom-right')"
       >
         Bottom right
       </button>
 
       <button
-        class="w-full md:w-2/5 py-2 mb-4 rounded-lg px-4 bg-blue-400 font-bold text-white"
+        class="w-full py-2 mb-4 rounded-lg px-4 bg-blue-400 font-bold text-white"
         @click="updateConfig('top-left')"
       >
         Top left
       </button>
 
       <button
-        class="w-full md:w-2/5 py-2 mb-4 rounded-lg px-4 bg-blue-400 font-bold text-white"
+        class="w-full py-2 mb-4 rounded-lg px-4 bg-blue-400 font-bold text-white"
         @click="updateConfig('top-right')"
       >
         Top right
       </button>
 
       <button
-        class="w-full md:w-2/5 py-2 mb-4 rounded-lg px-4 bg-blue-400 font-bold text-white"
+        class="w-full py-2 mb-4 rounded-lg px-4 bg-blue-400 font-bold text-white"
         @click="updateConfig('bottom-middle')"
       >
         Bottom middle
       </button>
 
       <button
-        class="w-full md:w-2/5 py-2 mb-4 rounded-lg px-4 bg-blue-400 font-bold text-white"
+        class="w-full py-2 mb-4 rounded-lg px-4 bg-blue-400 font-bold text-white"
         @click="updateConfig('top-middle')"
       >
         Top middle
@@ -123,7 +123,18 @@ export default {
 </script>
 
 <style>
-#app {
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 320px;
 }
 </style>
