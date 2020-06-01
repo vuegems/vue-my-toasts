@@ -1,7 +1,13 @@
 <template>
   <li
-    :class="[`bg-${color}-400`]"
-    class="relative overflow-hidden p-3 bg-gray-800 items-center text-indigo-100 leading-none rounded-lg my-2 mx-4 flex lg:inline-flex cursor-pointer select-none"
+    :class="[
+      `bg-${color}-400`,
+      {
+        'mb-2': position.includes('top'),
+        'mt-2': position.includes('bottom')
+      }
+    ]"
+    class="relative overflow-hidden p-3 bg-gray-800 items-center text-indigo-100 leading-none rounded-lg flex lg:inline-flex cursor-pointer select-none"
     role="alert"
     @click="$emit('remove')"
   >
@@ -11,7 +17,7 @@
       :style="{ width: percentageElapsed + '%' }"
     />
 
-    <!-- Text -->
+    <!-- Message -->
     <span class="font-semibold mr-2 text-left flex-1">{{ message }}</span>
 
     <!-- Icon -->
@@ -33,7 +39,7 @@ import ToastMixin from "../../mixins/ToastMixin";
 import TimerMixin from "../../mixins/TimerMixin";
 
 export default {
-  name: "DemoToast",
+  name: "TailwindComponent",
 
   mixins: [ToastMixin, TimerMixin],
 

@@ -1,9 +1,20 @@
 <template>
-  <header class="w-full text-gray-700 body-font">
-    <div class="flex justify-center items-center py-16">
-      <a class="flex items-center w-auto">
+  <header
+    class="w-full w-100 text-gray-700 body-font"
+    style="padding-top: 4rem; padding-bottom: 4rem; color: #4a5568;"
+  >
+    <div
+      class="flex d-flex justify-content-center align-items-center justify-center items-center"
+    >
+      <a class="d-flex flex align-items-center items-center w-auto">
         <svg
-          class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+          class="p-2"
+          :style="{
+            'background-color': '#667eea',
+            width: '4rem',
+            height: '4rem',
+            'border-radius': '100%'
+          }"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 128 128"
           width="64px"
@@ -27,7 +38,13 @@
           />
         </svg>
 
-        <span class="ml-3 font-bold text-3xl">vue-my-toasts</span>
+        <span
+          :style="{
+            'font-size': '1.875rem',
+            'margin-left': '0.75rem'
+          }"
+          >vue-my-toasts</span
+        >
       </a>
     </div>
   </header>
@@ -38,5 +55,3 @@ export default {
   name: "Hero"
 };
 </script>
-
-<style scoped></style>

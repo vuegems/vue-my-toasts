@@ -3,7 +3,8 @@
     id="vue-my-toasts-root"
     :class="['vue-my-toasts', position]"
     :style="{
-      '--vueMyToastsWidth': width
+      '--vueMyToastsWidth': width,
+      '--vueMyToastsPadding': padding
     }"
   >
     <transition-group
@@ -17,8 +18,9 @@
           position.includes('middle') ? 'fade-vertical' : 'fade-horizontal',
           position
         ]"
-        v-for="toast of toasts"
+        v-for="(toast, index) of toasts"
         :key="toast.id"
+        :index="index"
         :position="position"
         v-bind="toast"
         @remove="remove(toast.id)"
@@ -32,6 +34,11 @@ export default {
   name: "MyToasts",
 
   props: {
+    padding: {
+      type: String,
+      required: false,
+      default: "1rem"
+    },
     width: {
       type: String,
       required: false,
@@ -78,8 +85,21 @@ export default {
 </script>
 
 <style scoped>
-.vue-my-toasts {
+dl,
+ol,
+ul {
+  margin-bottom: 0;
+  margin-block-start: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+  list-style-type: none;
+}
+
+#vue-my-toasts-root {
   max-width: var(--vueMyToastsWidth);
+  width: var(--vueMyToastsWidth);
+  padding: var(--vueMyToastsPadding);
   position: fixed;
   z-index: 999999;
 }

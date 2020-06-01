@@ -16,9 +16,7 @@ Most toast plugins out here comes with a pre-defined style.
 
 I love some of these plugins, but you can't assume that your design will be used in every projects.
 
-This plugin aims to abstract what is boring in creating a toast notification plugin, and let you focus on designing your toast component.
-
-It comes with a pre-configured toast component, and mixins (base mixin and timer mixin for now) that you can import in your own component.
+This plugin aims to abstract what is boring in creating a toast notification plugin, and let you focus on designing your toast component while keeping a simple API to interact with.
 
 ## Setup
 
@@ -68,6 +66,31 @@ Vue.use(plugin, {
 });
 ```
 
+## Usage
+
+vue-my-toasts come with a simple API that you can use from anywhere in your codebase.
+
+As it is a Vue plugin, we inject our main functions and helpers in the Vue prototype under the key `$toasts`.
+
+You can so access this from anywhere in your Vue components, and generally from anywhere you have access to your Vue instance.
+
+```javascript
+export default {
+    name: "MyComponent",
+
+    mounted() {
+        // From helpers
+        this.$toasts.success('This is my favorite toasts plugin.')
+        
+        // From base function
+        this.$toasts.push({
+            type: "warning",
+            message: "This is definitely my favorite toasts plugin.",
+        })
+    }
+}
+```
+
 ## Create your own
 
 If you want to create your own component, you can start from the [Demo one](src/components/toasts/TailwindComponent.vue).
@@ -75,6 +98,27 @@ If you want to create your own component, you can start from the [Demo one](src/
 You need to import the [ToastMixin](src/mixins/ToastMixin.js) in your component, so you have a good start with the default configuration.
 
 If you want to have a timer inside your component, you can import the [TimerMixin](src/mixins/TimerMixin.js).
+
+### Attributes
+
+Attributes accessible by using the included mixins:
+
+- [ToastMixin](src/mixins/ToastMixin.js):
+- `this.id`: The ID of the toast, you can provide it yourself or it will be auto-generated.
+- `this.index`: The index of the toast inside the currently visible list
+- `this.type`: The type of the toast, can be: "base", "warning", "error", "success"
+- `this.position`: The position of the toast, can be: "bottom-right", "bottom-left", "top-right", "top-left", "top-middle", "bottom-middle"
+- `this.message`: The message of the toast.
+
+
+- [TimerMixin](src/mixins/TimerMixin.js):
+- `this.duration`: The duration for which the toast will be shown (in ms)
+- `this.percentageElapsed`: The percentage elapsed of the toast duration
+- `this.remaining`: The remaining time of the toast visible duration
+
+### Events
+
+- `$emit('remove')`: Remove event, that will close the current current toast.
 
 ## Credits
 

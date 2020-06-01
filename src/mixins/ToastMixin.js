@@ -8,6 +8,13 @@ module.exports = {
       required: true
     },
     /**
+     * The index of the toast in the current queue
+     */
+    index: {
+      type: Number,
+      required: true
+    },
+    /**
      * The type of the toast
      * Accepts: "base", "warning", "error", "success"
      */
@@ -19,11 +26,21 @@ module.exports = {
     },
     /**
      * The current position from the parent plugin options
+     * Accepts: "bottom-right", "bottom-left", "top-right", "top-left", "top-middle", "bottom-middle"
      */
     position: {
       type: String,
       required: false,
-      default: "bottom-right"
+      default: "bottom-right",
+      validator: x =>
+        [
+          "bottom-right",
+          "bottom-left",
+          "top-right",
+          "top-left",
+          "top-middle",
+          "bottom-middle"
+        ].includes(x)
     },
     /**
      * The message to show on the toast

@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./Demo";
 import plugin from "../src/index";
-const { TailwindComponent } = plugin.components;
+import TailwindComponent from "../src/components/toasts/TailwindComponent";
 
 Vue.use(plugin, {
   component: TailwindComponent,
