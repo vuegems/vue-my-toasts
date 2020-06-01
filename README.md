@@ -4,13 +4,13 @@
 
 ---
 
-# vue-my-toasts
+# 🍞 vue-my-toasts
 
 A Vue toast plugin that finally lets you create your own toast component.
 
 You can see a demo of the default behaviour [here](https://vue-my-toasts.netlify.app).
 
-## Why another toast plugin ?
+## ❓ Why another toast plugin ?
 
 Most toast plugins out here comes with a *pre-defined style*.
 
@@ -18,7 +18,7 @@ I love some of these plugins, but you can't assume that your design will be used
 
 This plugin aims to *abstract what is boring* in creating a toast notification plugin, and let you *focus on designing* your toast component while keeping a simple API to interact with.
 
-## Setup
+## 🛠 Setup
 
 Add it to your project with your favorite package manager.
 
@@ -30,7 +30,7 @@ npm install vue-my-toasts
 yarn add vue-my-toasts
 ```
 
-## Configure
+## ⚙ Configure
 
 Inject the plugin to your Vue instance, and configure it using the parameters.
 
@@ -74,9 +74,9 @@ Vue.use(plugin, {
 - `padding`: The padding of the box handling the toasts list (as CSS attribute)
 - `position`: The position of the toast list, can be: `bottom-right`, `bottom-left`, `top-right`, `top-left`, `top-middle`, `bottom-middle`
 
-Note that you can add as many parameters you want, they will be passed to the toast component.
+Note that you can add as many parameters you want, they will be passed as props to your toast component.
 
-## Usage
+## 👨‍💻 Usage
 
 vue-my-toasts come with a simple API that you can use from anywhere in your codebase.
 
@@ -116,7 +116,7 @@ export default {
 
 Note that you can add as many parameters you want to `options` object, they will be passed as props to your toast component.
 
-## Create your own
+## 👨‍🎨 Create your own
 
 If you want to create your own component, you can start from the [Demo one](src/components/toasts/TailwindComponent.vue).
 
@@ -145,12 +145,12 @@ Attributes accessible by using the included mixins:
 
 - `$emit('remove')`: Remove event, that will close the current current toast.
 
-## Credits
+## 👋 Credits
 
 [Yaël GUILLOUX](mailto:yael.guilloux@gmail.com)
 
 Follow my work on [yael.dev](https://yael.dev).
 
-## License
+## 🔏 License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
