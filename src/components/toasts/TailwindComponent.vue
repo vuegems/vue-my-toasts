@@ -35,6 +35,9 @@
 </template>
 
 <script>
+// If you are using this externally, you should use:
+// import ToastMixin from "vue-my-toasts/src/mixins/ToastMixin"
+// import TimerMixin from "vue-my-toasts/src/mixins/TimerMixin"
 import ToastMixin from "../../mixins/ToastMixin";
 import TimerMixin from "../../mixins/TimerMixin";
 
