@@ -3,20 +3,14 @@
   <div id="app">
     <hero />
 
-    <div
-      class="mb-8 w-full w-100 d-flex flex-column align-items-center flex flex-col items-center"
-      style="margin-bottom: 2rem;"
-    >
-      <h2
-        style="font-size: 1.125rem; color: #2d3748; margin-bottom: 1rem !important;"
-        class="text-gray-800 text-lg font-bold"
-      >
+    <div class="tmb-8 w-full flex flex-col items-center">
+      <h2>
         Demo component
       </h2>
 
       <button
-        class="btn btn-primary w-full w-100 py-2 rounded-lg px-4 border-2 font-bold text-white focus:outline-none"
-        :style="{ 'background-color': '#38b2ac', 'margin-bottom': '1rem' }"
+        class="btn btn-primary tmb-4 w-full rounded-lg border-2 font-bold focus:outline-none"
+        :style="{ 'background-color': '#38b2ac' }"
         :class="{
           'border-transparent border-white': currentComponent !== 'tailwind',
           'border-blue-400': currentComponent === 'tailwind'
@@ -27,8 +21,8 @@
       </button>
 
       <button
-        class="btn btn-primary w-full w-100 py-2 rounded-lg px-4 border-2 bg-blue-400 font-bold text-white focus:outline-none"
-        :style="{ 'background-color': '#7952b3', 'margin-bottom': '1rem' }"
+        class="btn btn-primary tmb-4 w-full rounded-lg border-2 bg-blue-400 font-bold focus:outline-none"
+        :style="{ 'background-color': '#7952b3' }"
         :class="{
           'border-transparent border-white': currentComponent !== 'bootstrap',
           'border-blue-400': currentComponent === 'bootstrap'
@@ -39,7 +33,7 @@
       </button>
 
       <a
-        class="btn btn-success text-center bg-green-400 w-full w-100 py-2 rounded-lg px-4 border-2 border-white font-bold text-white focus:outline-none"
+        class="btn btn-success text-center bg-green-400 w-full rounded-lg border-2 border-white font-bold focus:outline-none"
         target="_blank"
         href="https://github.com/Tahul/vue-my-toasts"
       >
@@ -47,119 +41,94 @@
       </a>
     </div>
 
-    <div
-      class="mb-8 w-full w-100 flex flex-col items-center d-flex flex-column align-items-center"
-      style="margin-bottom: 2rem;"
-    >
-      <h2
-        class="text-gray-800 text-lg font-bold"
-        style="font-size: 1.125rem; color: #2d3748; margin-bottom: 1rem !important;"
-      >
+    <div class="tmb-8 w-full flex flex-col items-center">
+      <h2>
         Toasts types
       </h2>
 
       <button
-        class="btn btn-info w-full w-100 py-2 rounded-lg px-4 bg-blue-400 font-bold text-white"
-        :style="{ 'margin-bottom': '1rem' }"
+        class="btn btn-info w-full rounded-lg bg-blue-400 font-bold tmb-4"
         @click="createToast('base')"
       >
         Create a base toast
       </button>
 
       <button
-        class="btn btn-warning w-full w-100 py-2 rounded-lg px-4 bg-orange-400 font-bold text-white"
-        :style="{ 'margin-bottom': '1rem' }"
+        class="btn btn-warning w-full rounded-lg bg-orange-400 font-bold tmb-4"
         @click="createToast('warning')"
       >
         Create a warning toast
       </button>
 
       <button
-        class="btn btn-success w-full w-100 py-2 rounded-lg px-4 bg-green-400 font-bold text-white"
-        :style="{ 'margin-bottom': '1rem' }"
+        class="btn btn-success w-full rounded-lg bg-green-400 font-bold tmb-4"
         @click="createToast('success')"
       >
         Create a success toast
       </button>
 
       <button
-        class="btn btn-danger w-full w-100 py-2 rounded-lg px-4 bg-red-400 font-bold text-white"
-        :style="{ 'margin-bottom': '1rem' }"
+        class="btn btn-danger w-full rounded-lg bg-red-400 font-bold tmb-4"
         @click="createToast('error')"
       >
         Create a error toast
       </button>
     </div>
 
-    <div
-      class="w-full w-100 flex flex-col items-center mb-8 d-flex flex-column align-items-center"
-      style="margin-bottom: 2rem;"
-    >
-      <h2
-        class="text-gray-800 text-lg font-bold"
-        style="font-size: 1.125rem; color: #2d3748; margin-bottom: 1rem !important;"
-      >
+    <div class="w-full flex flex-col items-center tmb-8">
+      <h2>
         Toasts positions
       </h2>
 
       <button
-        class="btn btn-primary w-full w-100 py-2 rounded-lg px-4 bg-blue-400 font-bold text-white"
-        :style="{ 'margin-bottom': '1rem' }"
+        class="btn btn-primary w-full rounded-lg bg-blue-400 font-bold tmb-4"
         @click="updateConfig('bottom-left')"
       >
         Bottom left
       </button>
 
       <button
-        class="btn btn-primary w-full w-100 py-2 rounded-lg px-4 bg-blue-400 font-bold text-white"
-        :style="{ 'margin-bottom': '1rem' }"
+        class="btn btn-primary w-full rounded-lg bg-blue-400 font-bold tmb-4"
         @click="updateConfig('bottom-right')"
       >
         Bottom right
       </button>
 
       <button
-        class="btn btn-primary w-full w-100 py-2 rounded-lg px-4 bg-blue-400 font-bold text-white"
-        :style="{ 'margin-bottom': '1rem' }"
+        class="btn btn-primary w-full rounded-lg bg-blue-400 font-bold tmb-4"
         @click="updateConfig('top-left')"
       >
         Top left
       </button>
 
       <button
-        class="btn btn-primary w-full w-100 py-2 rounded-lg px-4 bg-blue-400 font-bold text-white"
-        :style="{ 'margin-bottom': '1rem' }"
+        class="btn btn-primary w-full rounded-lg bg-blue-400 font-bold tmb-4"
         @click="updateConfig('top-right')"
       >
         Top right
       </button>
 
       <button
-        class="btn btn-primary w-full w-100 py-2 rounded-lg px-4 bg-blue-400 font-bold text-white"
-        :style="{ 'margin-bottom': '1rem' }"
+        class="tmb-4 btn btn-primary w-full rounded-lg bg-blue-400 font-bold tmb-4"
         @click="updateConfig('bottom-middle')"
       >
         Bottom middle
       </button>
 
       <button
-        class="btn btn-primary w-full w-100 py-2 rounded-lg px-4 bg-blue-400 font-bold text-white"
-        :style="{ 'margin-bottom': '1rem' }"
+        class="btn btn-primary w-full rounded-lg bg-blue-400 font-bold"
         @click="updateConfig('top-middle')"
       >
         Top middle
       </button>
     </div>
 
-    <div
-      style="margin-bottom: 2rem;"
-      class="w-full w-100 flex items-center justify-center text-center d-flex flex-column align-items-center"
-    >
+    <div class="tmb-8 w-full flex items-center justify-center text-center">
       <a
         class="text-gray-600 opacity-50 hover:opacity-100 transition-opacity duration-100 ease-in"
         href="https://github.com/Tahul/vue-my-toasts"
       >
-        <span class="mr-2">↩</span>Back to GitHub
+        <span class="tmr-2">↩</span>Back to GitHub
       </a>
     </div>
   </div>
@@ -284,5 +253,59 @@ body {
   align-items: center;
   flex-direction: column;
   width: 320px;
+}
+
+.font-bold {
+  font-weight: 700 !important;
+}
+
+.btn {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+  color: #ffffff !important;
+}
+
+h1,
+h2,
+h3 {
+  line-height: inherit !important;
+  font-size: 1.125rem !important;
+  color: #2d3748 !important;
+  margin-bottom: 1rem !important;
+  font-weight: 700 !important;
+}
+
+.w-full {
+  width: 100% !important;
+}
+
+.flex-col {
+  flex-direction: column !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.items-center {
+  align-items: center !important;
+}
+
+.justify-center {
+  justify-content: center !important;
+}
+
+.tmb-8 {
+  margin-bottom: 2rem !important;
+}
+
+.tmb-4 {
+  margin-bottom: 1rem !important;
+}
+
+.tmr-2 {
+  margin-right: 0.5rem !important;
 }
 </style>

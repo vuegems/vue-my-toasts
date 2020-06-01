@@ -82,12 +82,15 @@ export default {
 
     mounted() {
         // From helpers
-        this.$toasts.success('This is my favorite toasts plugin.')
+        this.$toasts.success('This is my favorite toasts plugin.', {
+            // Any other parameter...
+        })
         
         // From base function
         this.$toasts.push({
             type: "warning",
             message: "This is definitely my favorite toasts plugin.",
+            // Any other parameter...
         })
     }
 }
@@ -105,15 +108,15 @@ If you want to have a timer inside your component, you can import the [TimerMixi
 
 Attributes accessible by using the included mixins:
 
-- [ToastMixin](src/mixins/ToastMixin.js):
+- Using [ToastMixin](src/mixins/ToastMixin.js):
 - `this.id`: The ID of the toast, you can provide it yourself or it will be auto-generated.
 - `this.index`: The index of the toast inside the currently visible list
-- `this.type`: The type of the toast, can be: "base", "warning", "error", "success"
-- `this.position`: The position of the toast, can be: "bottom-right", "bottom-left", "top-right", "top-left", "top-middle", "bottom-middle"
+- `this.type`: The type of the toast, can be: `base`, `warning`, `error`, `success`
+- `this.position`: The position of the toast, can be: `bottom-right`, `bottom-left`, `top-right`, `top-left`, `top-middle`, `bottom-middle`
 - `this.message`: The message of the toast.
 
 
-- [TimerMixin](src/mixins/TimerMixin.js):
+- Using [TimerMixin](src/mixins/TimerMixin.js):
 - `this.duration`: The duration for which the toast will be shown (in ms)
 - `this.percentageElapsed`: The percentage elapsed of the toast duration
 - `this.remaining`: The remaining time of the toast visible duration
@@ -125,6 +128,8 @@ Attributes accessible by using the included mixins:
 ## Credits
 
 [Yaël GUILLOUX](mailto:yael.guilloux@gmail.com)
+
+Follow my work on [yael.dev](https://yael.dev).
 
 ## License
 
