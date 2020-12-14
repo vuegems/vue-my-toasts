@@ -191,7 +191,7 @@ var helperMethods = {
 // ------------------------------------------------------------------------------
 // VARIABLES
 // ------------------------------------------------------------------------------
-var version = '1.0.4';
+var version = '1.0.5';
 var pluginOptions = {
   width: '400px', // CSS variable
   padding: '1rem', // CSS variable

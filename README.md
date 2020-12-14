@@ -38,7 +38,7 @@ Do not forget to import the `css` file, it is needed to display the wrapper comp
 
 ```javascript
 import VueMyToasts from 'vue-my-toasts'
-import 'vue-my-toasts/dist/css'
+import 'vue-my-toasts/dist/vue-my-toasts.css'
 import YourToastComponent from '~/components/toasts/YourToastComponent'
 
 Vue.use(VueMyToasts, {
