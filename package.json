@@ -22,6 +22,7 @@
     "dist/vue-my-toasts.umd.min.js",
     "dist/vue-my-toasts.umd.js",
     "dist/vue-my-toasts.esm.js",
+    "dist/vue-my-toasts.css",
     "src"
   ],
   "peerDependencies": {

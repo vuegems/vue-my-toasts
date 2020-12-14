@@ -12,11 +12,11 @@ You can see a demo of the default behaviour [here](https://vue-my-toasts.netlify
 
 ## ❓ Why another toast plugin ?
 
-Most toast plugins out here comes with a *pre-defined style*.
+Most toast plugins out here comes with a _pre-defined style_.
 
-I love some of these plugins, but you can't assume that your design will be used in *every projects*.
+I love some of these plugins, but you can't assume that your design will be used in _every projects_.
 
-This plugin aims to *abstract what is boring* in creating a toast notification plugin, and let you *focus on designing* your toast component while keeping a simple API to interact with.
+This plugin aims to _abstract what is boring_ in creating a toast notification plugin, and let you _focus on designing_ your toast component while keeping a simple API to interact with.
 
 ## 🛠 Setup
 
@@ -34,18 +34,21 @@ yarn add vue-my-toasts
 
 Inject the plugin to your Vue instance, and configure it using the parameters.
 
+Do not forget to import the `css` file, it is needed to display the wrapper component properly.
+
 ```javascript
-import VueMyToasts from "vue-my-toasts";
-import YourToastComponent from "~/components/toasts/YourToastComponent"
+import VueMyToasts from 'vue-my-toasts'
+import 'vue-my-toasts/dist/css'
+import YourToastComponent from '~/components/toasts/YourToastComponent'
 
 Vue.use(VueMyToasts, {
   component: YourToastComponent,
   options: {
-    width: "400px",
-    position: "bottom-right",
-    padding: "1rem"
+    width: '400px',
+    position: 'bottom-right',
+    padding: '1rem'
   }
-});
+})
 ```
 
 The whole principle of this package is to build your own toast component.
@@ -57,19 +60,19 @@ Both of those components are ready to be used straight from your app, or to be c
 If you want to see the included component, you can watch the demo [here](https://vue-my-toasts.netlify.app).
 
 ```javascript
-import VueMyToasts from "vue-my-toasts";
+import VueMyToasts from 'vue-my-toasts'
 // import BootstrapComponent from "vue-my-toasts/src/components/toasts/BootstrapComponent";
-import TailwindComponent from "vue-my-toasts/src/components/toasts/TailwindComponent";
+import TailwindComponent from 'vue-my-toasts/src/components/toasts/TailwindComponent'
 
 Vue.use(VueMyToasts, {
   // component: BootstrapComponent,
   component: TailwindComponent,
   options: {
-    width: "400px",
-    position: "bottom-right",
-    padding: "1rem"
+    width: '400px',
+    position: 'bottom-right',
+    padding: '1rem'
   }
-});
+})
 ```
 
 ### Base parameters
@@ -90,21 +93,21 @@ You can so access this from anywhere in your Vue components, and generally from 
 
 ```javascript
 export default {
-    name: "MyComponent",
+  name: 'MyComponent',
 
-    mounted() {
-        // From helpers
-        this.$toasts.success('This is my favorite toasts plugin.', {
-            // Any other parameter...
-        })
-        
-        // From base function
-        this.$toasts.push({
-            type: "warning",
-            message: "This is definitely my favorite toasts plugin.",
-            // Any other parameter...
-        })
-    }
+  mounted() {
+    // From helpers
+    this.$toasts.success('This is my favorite toasts plugin.', {
+      // Any other parameter...
+    })
+
+    // From base function
+    this.$toasts.push({
+      type: 'warning',
+      message: 'This is definitely my favorite toasts plugin.'
+      // Any other parameter...
+    })
+  }
 }
 ```
 
@@ -138,7 +141,6 @@ Attributes accessible by using the included mixins:
 - `this.type`: The type of the toast, can be: `base`, `warning`, `error`, `success`
 - `this.position`: The position of the toast, can be: `bottom-right`, `bottom-left`, `top-right`, `top-left`, `top-middle`, `bottom-middle`
 - `this.message`: The message of the toast.
-
 
 - Using [TimerMixin](src/mixins/TimerMixin.js):
 - `this.duration`: The duration for which the toast will be shown (in ms)
