@@ -19,7 +19,7 @@ function rollupBundle({ env, plugins = [] }) {
     input: 'src/index.js',
     plugins: [
       vue(),
-      css(),
+      css({ output: `${name}.css` }),
       peerDepsExternal(),
       resolve({
         extensions: ['.js']
