@@ -4,5 +4,5 @@
  * @returns {string}
  */
 export default () => {
-  return "toast-" + Date.now() + "-" + Math.floor(Math.random() * 10);
-};
+  return 'toast-' + Date.now() + '-' + Math.floor(Math.random() * 10)
+}

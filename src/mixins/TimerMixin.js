@@ -20,7 +20,7 @@ module.exports = {
      * @returns { string }
      */
     percentageElapsed() {
-      return ((this.elapsed / this.duration) * 100).toFixed(1);
+      return ((this.elapsed / this.duration) * 100).toFixed(1)
     },
     /**
      * Return the remaining time as milliseconds
@@ -28,7 +28,7 @@ module.exports = {
      * @returns { number }
      */
     remaining() {
-      return this.duration - this.elapsed;
+      return this.duration - this.elapsed
     }
   },
 
@@ -38,22 +38,22 @@ module.exports = {
    */
   mounted() {
     // Hover event
-    this.$el.addEventListener("mouseover", () => {
-      this.hovered = true;
-    });
+    this.$el.addEventListener('mouseover', () => {
+      this.hovered = true
+    })
 
     // Mouse out event
-    this.$el.addEventListener("mouseout", () => {
-      this.hovered = false;
-    });
+    this.$el.addEventListener('mouseout', () => {
+      this.hovered = false
+    })
 
     // Set start timestampp
-    this.start = Date.now();
+    this.start = Date.now()
     // Initialize elapsed time
-    this.elapsed = 0;
+    this.elapsed = 0
 
     // Start requestAnimationFrame loop
-    requestAnimationFrame(this.updateTimer);
+    requestAnimationFrame(this.updateTimer)
   },
 
   /**
@@ -61,14 +61,14 @@ module.exports = {
    */
   beforeDestroy() {
     // Hover event
-    this.$el.removeEventListener("mouseover", () => {
-      this.hovered = true;
-    });
+    this.$el.removeEventListener('mouseover', () => {
+      this.hovered = true
+    })
 
     // Mouse out event
-    this.$el.removeEventListener("mouseout", () => {
-      this.hovered = false;
-    });
+    this.$el.removeEventListener('mouseout', () => {
+      this.hovered = false
+    })
   },
 
   methods: {
@@ -79,20 +79,20 @@ module.exports = {
       // Check if the toast is hovered
       if (!this.hovered) {
         // Update elapsed time
-        this.elapsed = Date.now() - this.start;
+        this.elapsed = Date.now() - this.start
 
         // Check if elapsed time is longer than showing duration
         if (this.elapsed >= this.duration) {
           // Emit the `remove` event
-          this.$emit("remove");
+          this.$emit('remove')
         }
       } else {
         // Pause the timer by keeping the elapsed time the same by updating started time
-        this.start = Date.now() - this.elapsed;
+        this.start = Date.now() - this.elapsed
       }
 
       // Call another aniationFrame
-      requestAnimationFrame(this.updateTimer);
+      requestAnimationFrame(this.updateTimer)
     }
   }
-};
+}

@@ -39,11 +39,11 @@
 // If you are creating a new component from this, you should use:
 // import ToastMixin from "vue-my-toasts/src/mixins/ToastMixin"
 // import TimerMixin from "vue-my-toasts/src/mixins/TimerMixin"
-import ToastMixin from "../../mixins/ToastMixin";
-import TimerMixin from "../../mixins/TimerMixin";
+import ToastMixin from '../../mixins/ToastMixin'
+import TimerMixin from '../../mixins/TimerMixin'
 
 export default {
-  name: "TailwindComponent",
+  name: 'TailwindComponent',
 
   mixins: [ToastMixin, TimerMixin],
 
@@ -58,20 +58,20 @@ export default {
   computed: {
     color() {
       switch (this.type) {
-        case "base":
-          return "blue";
-        case "warning":
-          return "orange";
-        case "error":
-          return "red";
-        case "success":
-          return "green";
+        case 'base':
+          return 'blue'
+        case 'warning':
+          return 'orange'
+        case 'error':
+          return 'red'
+        case 'success':
+          return 'green'
         default:
-          return "blue";
+          return 'blue'
       }
     }
   }
-};
+}
 </script>
 
 <style scoped>

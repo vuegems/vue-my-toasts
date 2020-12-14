@@ -32,23 +32,23 @@
 
 <script>
 export default {
-  name: "MyToasts",
+  name: 'MyToasts',
 
   props: {
     padding: {
       type: String,
       required: false,
-      default: "1rem"
+      default: '1rem'
     },
     width: {
       type: String,
       required: false,
-      default: "400px"
+      default: '400px'
     },
     position: {
       type: String,
       required: false,
-      default: "bottom-right"
+      default: 'bottom-right'
     }
   },
 
@@ -64,7 +64,7 @@ export default {
      */
     add(toast) {
       // Push the toast data to the toasts list
-      this.toasts.push(toast);
+      this.toasts.push(toast)
     },
     /**
      * Remove toast from instance
@@ -73,16 +73,16 @@ export default {
      */
     remove(toastId = null) {
       // Break if there is no toast to delete
-      if (this.toasts.length === 0) return;
+      if (this.toasts.length === 0) return
 
       // Get last toast id if no toastId is provided
-      toastId = toastId || this.toasts[0].id;
+      toastId = toastId || this.toasts[0].id
 
       // Filter the toasts
-      this.toasts = this.toasts.filter(toast => toast.id !== toastId);
+      this.toasts = this.toasts.filter((toast) => toast.id !== toastId)
     }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -105,9 +105,11 @@ ul {
   z-index: 999999;
 }
 
+/*
 @media screen and (max-device-width: var(--vueMyToastsWidth)) {
   max-width: 100%;
 }
+*/
 
 .vue-my-toasts-wrapper {
   width: 100%;

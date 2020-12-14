@@ -1,4 +1,4 @@
-import { push } from "./instanceMethods";
+import { push } from './instanceMethods'
 
 /**
  * The following 4 functions are helpers.
@@ -7,30 +7,30 @@ import { push } from "./instanceMethods";
 export default {
   base: (message, options = {}) => {
     push({
-      type: "base",
+      type: 'base',
       message,
       ...options
-    });
+    })
   },
   success: (message, options = {}) => {
     push({
-      type: "success",
+      type: 'success',
       message,
       ...options
-    });
+    })
   },
   warning: (message, options = {}) => {
     push({
-      type: "warning",
+      type: 'warning',
       message,
       ...options
-    });
+    })
   },
   error: (message, options = {}) => {
     push({
-      type: "error",
+      type: 'error',
       message,
       ...options
-    });
+    })
   }
-};
+}

@@ -4,9 +4,7 @@
     <hero />
 
     <div class="tmb-8 w-full flex flex-col items-center">
-      <h2>
-        Demo component
-      </h2>
+      <h2>Demo component</h2>
 
       <button
         class="btn btn-primary tmb-4 w-full rounded-lg border-2 font-bold focus:outline-none"
@@ -42,9 +40,7 @@
     </div>
 
     <div class="tmb-8 w-full flex flex-col items-center">
-      <h2>
-        Toasts types
-      </h2>
+      <h2>Toasts types</h2>
 
       <button
         class="btn btn-info w-full rounded-lg bg-blue-400 font-bold tmb-4"
@@ -76,9 +72,7 @@
     </div>
 
     <div class="w-full flex flex-col items-center tmb-8">
-      <h2>
-        Toasts positions
-      </h2>
+      <h2>Toasts positions</h2>
 
       <button
         class="btn btn-primary w-full rounded-lg bg-blue-400 font-bold tmb-4"
@@ -135,9 +129,9 @@
 </template>
 
 <script>
-import Hero from "./components/Hero";
-import TailwindComponent from "../src/components/toasts/TailwindComponent";
-import DemoToast from "../src/components/toasts/BootstrapComponent";
+import Hero from './components/Hero'
+import TailwindComponent from '../src/components/toasts/TailwindComponent'
+import DemoToast from '../src/components/toasts/BootstrapComponent'
 
 const messages = [
   `“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” – Martin Fowler`,
@@ -147,57 +141,57 @@ const messages = [
   `“Java is to JavaScript what car is to Carpet.” – Chris Heilmann`,
   `“Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday’s code.” – Dan Salomon`,
   `“Knowledge is power.” – Francis Bacon`
-];
+]
 
-const randomElement = array => array[Math.floor(Math.random() * array.length)];
+const randomElement = (array) => array[Math.floor(Math.random() * array.length)]
 
 export default {
-  name: "App",
+  name: 'App',
 
   components: {
     Hero
   },
 
   data: () => ({
-    currentComponent: "tailwind"
+    currentComponent: 'tailwind'
   }),
 
   methods: {
     loadStylesheet(framework) {
-      if (framework === this.currentComponent) return;
+      if (framework === this.currentComponent) return
 
-      if (document.getElementById("currentStyleSheet")) {
-        document.getElementById("currentStyleSheet").remove();
+      if (document.getElementById('currentStyleSheet')) {
+        document.getElementById('currentStyleSheet').remove()
       }
 
-      const head = document.head;
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.id = "currentStyleSheet";
-      link.type = "text/css";
+      const head = document.head
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.id = 'currentStyleSheet'
+      link.type = 'text/css'
 
-      if (framework === "bootstrap") {
+      if (framework === 'bootstrap') {
         link.href =
-          "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css";
+          'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'
         link.integriy =
-          "sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk";
-        link.crossorigin = "anonymous";
+          'sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk'
+        link.crossorigin = 'anonymous'
       }
 
-      if (framework === "tailwind") {
+      if (framework === 'tailwind') {
         link.href =
-          "https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.min.css";
-        link.integriy = "sha256-CAI/7ThhltsmP2L2zKBYa7FknB3ZwFbD0nqL8FCdxdc=";
-        link.crossorigin = "anonymous";
+          'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.min.css'
+        link.integriy = 'sha256-CAI/7ThhltsmP2L2zKBYa7FknB3ZwFbD0nqL8FCdxdc='
+        link.crossorigin = 'anonymous'
       }
 
-      head.appendChild(link);
+      head.appendChild(link)
     },
 
-    createToast(status = "base") {
+    createToast(status = 'base') {
       this.$toasts[status](randomElement(messages), {
-        title: "My toast title"
-      });
+        title: 'My toast title'
+      })
     },
 
     updateConfig(position) {
@@ -205,38 +199,38 @@ export default {
         {
           position
         },
-        this.currentComponent === "tailwind" ? TailwindComponent : DemoToast
-      );
+        this.currentComponent === 'tailwind' ? TailwindComponent : DemoToast
+      )
 
-      this.createToast();
+      this.createToast()
     },
 
     setComponent(component) {
       switch (component) {
-        case "tailwind":
-          this.loadStylesheet(component);
+        case 'tailwind':
+          this.loadStylesheet(component)
           this.$toasts.updateConfig(
             {
-              padding: "1rem"
+              padding: '1rem'
             },
             TailwindComponent
-          );
-          this.currentComponent = "tailwind";
-          return;
-        case "bootstrap":
-          this.loadStylesheet(component);
-          this.currentComponent = "bootstrap";
+          )
+          this.currentComponent = 'tailwind'
+          return
+        case 'bootstrap':
+          this.loadStylesheet(component)
+          this.currentComponent = 'bootstrap'
           this.$toasts.updateConfig(
             {
-              padding: "1.5rem"
+              padding: '1.5rem'
             },
             DemoToast
-          );
-          return;
+          )
+          return
       }
     }
   }
-};
+}
 </script>
 
 <style>

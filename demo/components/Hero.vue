@@ -1,7 +1,7 @@
 <template>
   <header
     class="w-full w-100 text-gray-700 body-font"
-    style="padding-top: 4rem; padding-bottom: 4rem; color: #4a5568;"
+    style="padding-top: 4rem; padding-bottom: 4rem; color: #4a5568"
   >
     <div
       class="flex d-flex justify-content-center align-items-center justify-center items-center"
@@ -52,6 +52,6 @@
 
 <script>
 export default {
-  name: "Hero"
-};
+  name: 'Hero'
+}
 </script>

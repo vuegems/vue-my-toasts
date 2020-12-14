@@ -21,8 +21,8 @@ module.exports = {
     type: {
       type: String,
       required: false,
-      default: "base",
-      validator: x => ["base", "warning", "error", "success"].includes(x)
+      default: 'base',
+      validator: (x) => ['base', 'warning', 'error', 'success'].includes(x)
     },
     /**
      * The current position from the parent plugin options
@@ -31,15 +31,15 @@ module.exports = {
     position: {
       type: String,
       required: false,
-      default: "bottom-right",
-      validator: x =>
+      default: 'bottom-right',
+      validator: (x) =>
         [
-          "bottom-right",
-          "bottom-left",
-          "top-right",
-          "top-left",
-          "top-middle",
-          "bottom-middle"
+          'bottom-right',
+          'bottom-left',
+          'top-right',
+          'top-left',
+          'top-middle',
+          'bottom-middle'
         ].includes(x)
     },
     /**
@@ -50,4 +50,4 @@ module.exports = {
       required: true
     }
   }
-};
+}

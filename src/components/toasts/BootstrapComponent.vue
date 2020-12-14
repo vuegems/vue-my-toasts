@@ -16,7 +16,7 @@
     <!-- Close button -->
     <button
       type="button"
-      class="close "
+      class="close"
       data-dismiss="alert"
       aria-label="Close"
       @click="$emit('remove')"
@@ -38,11 +38,11 @@
 // If you are creating a new component from this, you should use:
 // import ToastMixin from "vue-my-toasts/src/mixins/ToastMixin"
 // import TimerMixin from "vue-my-toasts/src/mixins/TimerMixin"
-import ToastMixin from "../../mixins/ToastMixin";
-import TimerMixin from "../../mixins/TimerMixin";
+import ToastMixin from '../../mixins/ToastMixin'
+import TimerMixin from '../../mixins/TimerMixin'
 
 export default {
-  name: "BootstrapComponent",
+  name: 'BootstrapComponent',
 
   mixins: [ToastMixin, TimerMixin],
 
@@ -57,20 +57,20 @@ export default {
   computed: {
     color() {
       switch (this.type) {
-        case "base":
-          return "info";
-        case "warning":
-          return "warning";
-        case "error":
-          return "danger";
-        case "success":
-          return "success";
+        case 'base':
+          return 'info'
+        case 'warning':
+          return 'warning'
+        case 'error':
+          return 'danger'
+        case 'success':
+          return 'success'
         default:
-          return "info";
+          return 'info'
       }
     }
   }
-};
+}
 </script>
 
 <style scoped>

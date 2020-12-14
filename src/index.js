@@ -1,18 +1,18 @@
 // ------------------------------------------------------------------------------
 // IMPORTS
 // ------------------------------------------------------------------------------
-import { push, remove, updateConfig } from "./lib/instanceMethods";
-import helperMethods from "./lib/helperMethods";
+import { push, remove, updateConfig } from './lib/instanceMethods'
+import helperMethods from './lib/helperMethods'
 
 // ------------------------------------------------------------------------------
 // VARIABLES
 // ------------------------------------------------------------------------------
-const version = "__VERSION__";
+const version = '__VERSION__'
 let pluginOptions = {
-  width: "400px", // CSS variable
-  padding: "1rem", // CSS variable
-  position: "bottom-right" // top-left, top-right, bottom-left, bottom-right, top-middle, bottom-middle
-};
+  width: '400px', // CSS variable
+  padding: '1rem', // CSS variable
+  position: 'bottom-right' // top-left, top-right, bottom-left, bottom-right, top-middle, bottom-middle
+}
 
 // ------------------------------------------------------------------------------
 // FUNCTIONS
@@ -29,10 +29,10 @@ const install = (Vue, { component, options }) => {
   pluginOptions = {
     ...pluginOptions,
     ...options
-  };
+  }
 
   // Initialize config
-  updateConfig(pluginOptions, component);
+  updateConfig(pluginOptions, component)
 
   // Inject into vue prototype
   Vue.prototype.$toasts = {
@@ -48,12 +48,12 @@ const install = (Vue, { component, options }) => {
       pluginOptions = {
         ...pluginOptions,
         ...newOptions
-      };
+      }
 
-      updateConfig(pluginOptions, userComponent);
+      updateConfig(pluginOptions, userComponent)
     }
-  };
-};
+  }
+}
 
 // ------------------------------------------------------------------------------
 // EXPORTS
@@ -70,13 +70,13 @@ const install = (Vue, { component, options }) => {
 const plugin = {
   install,
   version
-};
+}
 
-export default plugin;
+export default plugin
 
 /**
  * Try to auto-inject if Vue is loaded as a script tag.
  */
-if (typeof window !== "undefined" && window.Vue) {
-  window.Vue.use(plugin);
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(plugin)
 }
