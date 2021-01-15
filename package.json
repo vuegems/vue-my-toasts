@@ -2,12 +2,9 @@
   "name": "vue-my-toasts",
   "version": "1.0.5",
   "author": "Yaël GUILLOUX <yael.guilloux@gmail.com>",
-  "license": {
-    "url": "https://github.com/Tahul/vue-my-toasts/raw/master/LICENSE",
-    "type": "MIT"
-  },
+  "license": "https://github.com/Tahul/vue-my-toasts/raw/master/LICENSE",
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
     "build": "node build/build.js",
     "demo": "vue-cli-service demo --watch",
