@@ -85,6 +85,7 @@ module.exports = {
         if (this.elapsed >= this.duration) {
           // Emit the `remove` event
           this.$emit('remove')
+          return
         }
       } else {
         // Pause the timer by keeping the elapsed time the same by updating started time
