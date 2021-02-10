@@ -14,7 +14,8 @@
       tag="ul"
       :class="['vue-my-toasts-wrapper', position]"
     >
-      <my-toasts-component
+      <component
+        :is="component"
         :class="[
           position.includes('middle') ? 'fade-vertical' : 'fade-horizontal',
           position
@@ -25,7 +26,7 @@
         :position="position"
         v-bind="toast"
         @remove="remove(toast.id)"
-      />
+      ></component>
     </transition-group>
   </div>
 </template>
@@ -49,6 +50,10 @@ export default {
       type: String,
       required: false,
       default: 'bottom-right'
+    },
+    component: {
+      type: Object,
+      required: true
     }
   },
 

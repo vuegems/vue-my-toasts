@@ -7,12 +7,11 @@ import MyToasts from '../components/MyToasts.vue'
  * @returns {{reference: Vue | object | Record<never, any>, instance: Vue}}
  */
 export default (pluginOptions, userComponent) => {
-  // Inject user provided component
-  Vue.component('my-toasts-component', userComponent)
-
+  // inject userComponent to the pluginOptions
+  const _props = { ...pluginOptions, component: userComponent}
   // Create toasts layer instance
   const vueInstance = new Vue({
-    render: (h) => h(MyToasts, { props: pluginOptions })
+    render: (h) => h(MyToasts, { props: _props })
   })
 
   // Create component
