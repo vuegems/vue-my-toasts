@@ -13,10 +13,10 @@ var MyToasts = {
 render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.toasts.length > 0)?_c('div',{class:['vue-my-toasts', _vm.position],style:({
     '--vueMyToastsWidth': _vm.width,
     '--vueMyToastsPadding': _vm.padding
-  }),attrs:{"id":"vue-my-toasts-root"}},[_c('transition-group',{class:['vue-my-toasts-wrapper', _vm.position],attrs:{"duration":"350","name":_vm.position.includes('middle') ? 'fade-vertical' : 'fade-horizontal',"tag":"ul"}},_vm._l((_vm.toasts),function(toast,index){return _c('my-toasts-component',_vm._b({key:toast.id,class:[
+  }),attrs:{"id":"vue-my-toasts-root"}},[_c('transition-group',{class:['vue-my-toasts-wrapper', _vm.position],attrs:{"duration":"350","name":_vm.position.includes('middle') ? 'fade-vertical' : 'fade-horizontal',"tag":"ul"}},_vm._l((_vm.toasts),function(toast,index){return _c(_vm.component,_vm._b({key:toast.id,tag:"component",class:[
         _vm.position.includes('middle') ? 'fade-vertical' : 'fade-horizontal',
         _vm.position
-      ],attrs:{"index":index,"position":_vm.position},on:{"remove":function($event){return _vm.remove(toast.id)}}},'my-toasts-component',toast,false))}),1)],1):_vm._e()},
+      ],attrs:{"index":index,"position":_vm.position},on:{"remove":function($event){return _vm.remove(toast.id)}}},'component',toast,false))}),1)],1):_vm._e()},
 staticRenderFns: [],
   name: 'MyToasts',
 
@@ -35,6 +35,10 @@ staticRenderFns: [],
       type: String,
       required: false,
       default: 'bottom-right'
+    },
+    component: {
+      type: Object,
+      required: true
     }
   },
 
@@ -78,12 +82,11 @@ staticRenderFns: [],
  * @returns {{reference: Vue | object | Record<never, any>, instance: Vue}}
  */
 function injectComponent (pluginOptions, userComponent) {
-  // Inject user provided component
-  Vue.component('my-toasts-component', userComponent);
-
+  // inject userComponent to the pluginOptions
+  var _props = Object.assign({}, pluginOptions, {component: userComponent});
   // Create toasts layer instance
   var vueInstance = new Vue({
-    render: function (h) { return h(MyToasts, { props: pluginOptions }); }
+    render: function (h) { return h(MyToasts, { props: _props }); }
   });
 
   // Create component
@@ -191,7 +194,7 @@ var helperMethods = {
 // ------------------------------------------------------------------------------
 // VARIABLES
 // ------------------------------------------------------------------------------
-var version = '1.0.5';
+var version = '1.1.0';
 var pluginOptions = {
   width: '400px', // CSS variable
   padding: '1rem', // CSS variable
