@@ -52,7 +52,7 @@ export default {
       default: 'bottom-right'
     },
     component: {
-      type: Object,
+      type: [Object, Function],
       required: true
     }
   },
