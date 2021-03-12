@@ -37,7 +37,7 @@ staticRenderFns: [],
       default: 'bottom-right'
     },
     component: {
-      type: Object,
+      type: [Object, Function],
       required: true
     }
   },
@@ -194,7 +194,7 @@ var helperMethods = {
 // ------------------------------------------------------------------------------
 // VARIABLES
 // ------------------------------------------------------------------------------
-var version = '1.1.0';
+var version = '1.1.1';
 var pluginOptions = {
   width: '400px', // CSS variable
   padding: '1rem', // CSS variable
