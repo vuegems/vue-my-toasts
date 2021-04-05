@@ -1,10 +1,10 @@
-import {
+import { App, Ref, ref } from 'vue-demi'
+import type {
   MyToastsInstance,
   VueMyToastsComponent,
   VueMyToastsOptions,
-  VueMyToastsPayload,
-} from 'src/types'
-import { App, Ref, ref } from 'vue-demi'
+  VueMyToastsPayload
+} from '../types'
 import getUuid from './getUuid'
 import injectComponent from './injectComponent'
 

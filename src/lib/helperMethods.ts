@@ -1,4 +1,4 @@
-import { VueMyToastsOptions } from 'src/types'
+import type { VueMyToastsOptions } from '../types'
 import { push } from './instanceMethods'
 
 /**

@@ -1,6 +1,6 @@
-import { VueMyToastsComponent, VueMyToastsOptions } from 'src/types'
 import { createApp } from 'vue-demi'
 import MyToasts from '../components/MyToasts'
+import type { VueMyToastsComponent, VueMyToastsOptions } from '../types'
 
 /**
  * Register toast handler component to root

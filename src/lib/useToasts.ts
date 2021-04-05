@@ -1,5 +1,5 @@
-import { VueMyToastsGlobalInstance } from 'src/types'
 import { updateConfig } from '../index'
+import type { VueMyToastsGlobalInstance } from '../types'
 import helperMethods from './helperMethods'
 import { push, remove, toasts } from './instanceMethods'
 
