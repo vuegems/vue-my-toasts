@@ -12,7 +12,7 @@ const css = require('rollup-plugin-css-only')
 // Make sure dist dir exists
 mkdirp('dist')
 
-const { name, version } = require('../package.json')
+const { name, version } = require('./package.json')
 
 function rollupBundle({ env, plugins = [] }) {
   return rollup({
