@@ -1,4 +1,10 @@
-import { ComponentPublicInstance, defineComponent, Ref } from 'vue-demi'
+import { MotionVariants } from '@vueuse/motion'
+import {
+  ComponentPublicInstance,
+  defineComponent,
+  Ref,
+  RendererElement,
+} from 'vue-demi'
 
 export type VueMyToastsComponent = typeof defineComponent
 
@@ -14,6 +20,7 @@ export type VueMyToastsOptions = {
   width?: string
   padding?: string
   position?: VueMyToastsPosition
+  variants?: MotionVariants | VueMyToastsVariantsFunction
   [key: string]: any
 }
 
@@ -29,6 +36,7 @@ export type MyToastsInstance = {
 } & ComponentPublicInstance
 
 export type VueMyToastsPayload = {
+  id?: string
   type?: 'base' | 'success' | 'warning' | 'error' | string
   message?: string
   [key: string]: any
@@ -54,6 +62,17 @@ export type VueMyToastsGlobalInstance = {
   error: VueMyToastsHelper
   updateConfig: VueMyToastsUpdateConfig
 }
+
+export type TransitionComponentHook = (
+  el: RendererElement,
+  done: () => void,
+) => void
+
+export type VueMyToastsVariantsFunction = (
+  position: VueMyToastsPosition,
+  toastId?: string,
+  index?: number,
+) => MotionVariants
 
 declare module '@vue/runtime-core' {
   export interface ComponentCustomProperties {
