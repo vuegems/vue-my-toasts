@@ -12,7 +12,7 @@ You can see a demo of the default behaviour [here](https://vue-my-toasts.netlify
 
 ⚠**This repository is being rewritten to be cross-compatible with Vue 2 & 3**⚠
 
-⚠**Please stay tuned on [**Twitter**](https://twitter.com/yaeeelglx) for release date.**⚠
+⚠**Please stay tuned on **[**Twitter**](https://twitter.com/yaeeelglx)** for release date.**⚠
 
 ## ❓ Why another toast plugin ?
 
