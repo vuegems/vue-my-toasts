@@ -4,8 +4,8 @@
       `bg-${color}-400`,
       {
         'mb-2': position.includes('top'),
-        'mt-2': position.includes('bottom')
-      }
+        'mt-2': position.includes('bottom'),
+      },
     ]"
     class="relative overflow-hidden p-3 bg-gray-800 items-center text-indigo-100 leading-none rounded-lg flex lg:inline-flex cursor-pointer select-none"
     role="alert"
@@ -35,24 +35,18 @@
   </li>
 </template>
 
-<script>
-// If you are creating a new component from this, you should use:
-// import ToastMixin from "vue-my-toasts/src/mixins/ToastMixin"
-// import TimerMixin from "vue-my-toasts/src/mixins/TimerMixin"
-import ToastMixin from '../../mixins/ToastMixin'
-import TimerMixin from '../../mixins/TimerMixin'
+<script lang="ts">
+import defineToastComponent from '../../mixins/defineToastComponent'
 
-export default {
+export default defineToastComponent({
   name: 'TailwindComponent',
-
-  mixins: [ToastMixin, TimerMixin],
 
   props: {
     badge: {
       type: [String, Boolean],
       required: false,
-      default: false
-    }
+      default: false,
+    },
   },
 
   computed: {
@@ -69,9 +63,9 @@ export default {
         default:
           return 'blue'
       }
-    }
-  }
-}
+    },
+  },
+})
 </script>
 
 <style scoped>
