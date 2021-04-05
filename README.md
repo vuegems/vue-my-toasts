@@ -10,6 +10,10 @@ A Vue toast plugin that finally lets you create your own toast component.
 
 You can see a demo of the default behaviour [here](https://vue-my-toasts.netlify.app).
 
+⚠**This repository is being rewritten to be cross-compatible with Vue 2 & 3**⚠
+
+⚠**Please stay tuned on [**Twitter**](https://twitter.com/yaeeelglx) for release date.**⚠
+
 ## ❓ Why another toast plugin ?
 
 Most toast plugins out here comes with a _pre-defined style_.
@@ -46,8 +50,8 @@ Vue.use(VueMyToasts, {
   options: {
     width: '400px',
     position: 'bottom-right',
-    padding: '1rem'
-  }
+    padding: '1rem',
+  },
 })
 ```
 
@@ -70,8 +74,8 @@ Vue.use(VueMyToasts, {
   options: {
     width: '400px',
     position: 'bottom-right',
-    padding: '1rem'
-  }
+    padding: '1rem',
+  },
 })
 ```
 
@@ -104,10 +108,10 @@ export default {
     // From base function
     this.$toasts.push({
       type: 'warning',
-      message: 'This is definitely my favorite toasts plugin.'
+      message: 'This is definitely my favorite toasts plugin.',
       // Any other parameter...
     })
-  }
+  },
 }
 ```
 
