@@ -12,10 +12,11 @@
     "build:demo": "vite build",
     "serve:demo": "vite serve demo/dist"
   },
-  "main": "dist/vue-my-toasts.common.js",
-  "module": "dist/vue-my-toasts.esm.js",
-  "unpkg": "dist/vue-my-toasts.umd.min.js",
-  "jsdelivr": "dist/vue-my-toasts.umd.min.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm-bundler.js",
+  "unpkg": "dist/index.global.js",
+  "jsdelivr": "dist/index.global.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/vue-my-toasts.common.js",
     "dist/vue-my-toasts.umd.min.js",
