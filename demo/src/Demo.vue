@@ -131,7 +131,6 @@
 <script>
 import { defineComponent } from 'vue'
 import Hero from './components/Hero.vue'
-import { useToasts } from '../../src'
 import TailwindComponent from '../../src/components/toasts/TailwindComponent.vue'
 import DemoToast from '../../src/components/toasts/BootstrapComponent.vue'
 
