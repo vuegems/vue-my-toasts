@@ -1,6 +1,3 @@
-// ------------------------------------------------------------------------------
-// IMPORTS
-// ------------------------------------------------------------------------------
 import { Plugin } from 'vue-demi'
 import helperMethods from './lib/helperMethods'
 import {
@@ -19,22 +16,15 @@ import {
   VueMyToastsOptions,
   VueMyToastsPluginOptions,
 } from './types'
+// Exports
 export * from './types'
 export { useToasts, ToastMixin, TimerMixin, defineToastComponent }
-
-// ------------------------------------------------------------------------------
-// VARIABLES
-// ------------------------------------------------------------------------------
 export let currentComponent: VueMyToastsComponent | undefined = undefined
 export let pluginOptions: VueMyToastsOptions = {
   width: '400px', // CSS variable
   padding: '1rem', // CSS variable
   position: 'bottom-right', // top-left, top-right, bottom-left, bottom-right, top-middle, bottom-middle
 }
-
-// ------------------------------------------------------------------------------
-// EXPORTS
-// ------------------------------------------------------------------------------
 
 /**
  * Update the VueMyToasts options and reload instance.
@@ -81,6 +71,7 @@ const plugin: Plugin = {
     // Initialize config
     _updateConfig(pluginOptions, component)
 
+    // Generate VueMyToasts global instance
     const $toasts: VueMyToastsGlobalInstance = {
       toasts,
       push,
@@ -97,9 +88,7 @@ const plugin: Plugin = {
 
 export default plugin
 
-/**
- * Try to auto-inject if Vue is loaded as a script tag.
- */
+// Try to auto-inject if Vue is loaded as a script tag.
 if (typeof window !== 'undefined' && (window as any).Vue) {
   ;(window as any).Vue.use(plugin)
 }
