@@ -1,5 +1,5 @@
 {
-  "include": ["src/types/global.d.ts", "src/**/*.ts"],
+  "include": ["src/global.d.ts", "src/**/*.ts"],
   "exclude": ["dist", "node_modules"],
   "compilerOptions": {
     "baseUrl": ".",
