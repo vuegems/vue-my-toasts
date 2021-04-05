@@ -5,15 +5,15 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   root: 'demo/',
   optimizeDeps: {
-    exclude: ['vue-demi']
+    exclude: ['vue-demi'],
   },
   plugins: [vue()],
   resolve: {
     alias: [
       {
         find: '@vuegems/my-toasts',
-        replacement: resolve(__dirname, './src/index.ts')
-      }
-    ]
-  }
+        replacement: resolve(__dirname, './src/index.ts'),
+      },
+    ],
+  },
 })
