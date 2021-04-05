@@ -3,9 +3,9 @@
     :class="[
       `alert-${color}`,
       {
-        'mb-4': position.includes('top'),
-        'mt-4': position.includes('bottom')
-      }
+        'mb-2': position.includes('top'),
+        'mt-2': position.includes('bottom'),
+      },
     ]"
     class="position-relative alert w-100 alert-dismissible"
     role="alert"
@@ -28,30 +28,24 @@
     <div
       class="loading-bar position-absolute bg-white"
       :style="{
-        width: percentageElapsed + '%'
+        width: percentageElapsed + '%',
       }"
     />
   </div>
 </template>
 
-<script>
-// If you are creating a new component from this, you should use:
-// import ToastMixin from "vue-my-toasts/src/mixins/ToastMixin"
-// import TimerMixin from "vue-my-toasts/src/mixins/TimerMixin"
-import ToastMixin from '../../mixins/ToastMixin'
-import TimerMixin from '../../mixins/TimerMixin'
+<script lang="ts">
+import defineToastComponent from '../../mixins/defineToastComponent'
 
-export default {
+export default defineToastComponent({
   name: 'BootstrapComponent',
-
-  mixins: [ToastMixin, TimerMixin],
 
   props: {
     title: {
       type: [String, Boolean],
       required: false,
-      default: false
-    }
+      default: false,
+    },
   },
 
   computed: {
@@ -68,9 +62,9 @@ export default {
         default:
           return 'info'
       }
-    }
-  }
-}
+    },
+  },
+})
 </script>
 
 <style scoped>
