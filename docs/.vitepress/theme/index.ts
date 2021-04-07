@@ -4,7 +4,6 @@ import DefaultTheme from 'vitepress/dist/client/theme-default'
 import Features from '../components/Features.vue'
 import Hero from '../components/Hero.vue'
 import Layout from '../components/Layout.vue'
-import Person from '../components/Person.vue'
 import TailwindComponent from '../../../src/components/toasts/TailwindComponent.vue'
 import MyToastsPlugin from '@vuegems/my-toasts'
 import '../../../src/assets/style.css'
@@ -26,7 +25,5 @@ export default {
     app.component('Features', Features)
 
     app.component('Hero', Hero)
-
-    app.component('Person', Person)
   },
 }

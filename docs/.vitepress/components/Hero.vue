@@ -1,10 +1,6 @@
 <template>
   <header class="home-hero">
-    <h1 ref="header" id="main-title" class="title">
-      <span>@vuegems</span>
-      <span>/</span>
-      <span>my-toasts</span>
-    </h1>
+    <h1 ref="header" id="main-title" class="title">vue-my-toasts</h1>
     <p ref="description" class="description">
       <b>Provide</b> your <b>component</b> and let us <b>toast</b> the rest
     </p>

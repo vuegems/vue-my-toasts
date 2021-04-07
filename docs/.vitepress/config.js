@@ -4,7 +4,7 @@
  * @type {import('vitepress').UserConfig}
  */
 module.exports = {
-  title: '@vuegems/my-toasts',
+  title: '@vuegems/vue-my-toasts',
   description: '🍞 Provide your component and let us toast the rest',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico', type: 'image/png' }],
