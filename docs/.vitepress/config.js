@@ -9,6 +9,14 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico', type: 'image/png' }],
     ['link', { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' }],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.6/tailwind.min.css',
+      },
+    ],
     ['meta', { name: 'author', content: 'Yaël GUILLOUX' }],
     ['meta', { property: 'og:title', content: '@vuegems/my-toasts' }],
     [
