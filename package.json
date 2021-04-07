@@ -10,7 +10,10 @@
     "lint:fix": "yarn run lint --write",
     "dev:demo": "vite",
     "build:demo": "vite build",
-    "serve:demo": "vite serve demo/dist"
+    "serve:demo": "vite serve demo/dist",
+    "dev:docs": "vitepress dev docs",
+    "build:docs": "vitepress build docs",
+    "serve:docs": "vitepress serve docs"
   },
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm-bundler.js",
@@ -26,6 +29,7 @@
     "src"
   ],
   "dependencies": {
+    "@vueuse/motion": "^1.5.4",
     "vue-demi": "0.7.4"
   },
   "peerDependencies": {
@@ -44,7 +48,6 @@
     "@vitejs/plugin-vue": "^1.2.1",
     "@vue/compiler-sfc": "^3.0.11",
     "@vue/eslint-config-prettier": "^6.0.0",
-    "@vueuse/motion": "^1.5.3",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.8.0",
     "pascalcase": "^1.0.0",
@@ -58,6 +61,7 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "typescript": "^4.2.3",
     "vite": "^2.1.5",
+    "vitepress": "^0.12.2",
     "vue": "^3.0.11"
   },
   "sideeffects": false
