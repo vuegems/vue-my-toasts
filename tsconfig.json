@@ -1,5 +1,12 @@
 {
-  "include": ["src/global.d.ts", "src/**/*.ts"],
+  "include": [
+    "src/global.d.ts",
+    "src/**/*.ts",
+    "docs/**/*.ts",
+    "docs/**/*.vue",
+    "docs/**/*.ts",
+    "docs/**/*.vue"
+  ],
   "exclude": ["dist", "node_modules"],
   "compilerOptions": {
     "baseUrl": ".",
