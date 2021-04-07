@@ -190,32 +190,33 @@ export default defineComponent({
             tag: 'ul',
             class: ['vue-my-toasts-wrapper', position],
           },
-          toasts.map((toast: VueMyToastsPayload, index: number) =>
-            withDirectives(
-              h(
-                'li',
-                {
-                  key: toast.id,
-                  'data-id': toast.id,
-                },
+          () =>
+            toasts.map((toast: VueMyToastsPayload, index: number) =>
+              withDirectives(
+                h(
+                  'li',
+                  {
+                    key: toast.id,
+                    'data-id': toast.id,
+                  },
+                  [
+                    h(component, {
+                      class: [position],
+                      index,
+                      position,
+                      onRemove: () => remove(toast.id),
+                      ...toast,
+                    }),
+                  ],
+                ),
                 [
-                  h(component, {
-                    class: [position],
-                    index,
-                    position,
-                    onRemove: () => remove(toast.id),
-                    ...toast,
-                  }),
+                  [
+                    MotionDirective(toastVariants(position, toast.id, index)),
+                    toast.id,
+                  ],
                 ],
               ),
-              [
-                [
-                  MotionDirective(toastVariants(position, toast.id, index)),
-                  toast.id,
-                ],
-              ],
             ),
-          ),
         ),
       ],
     )
