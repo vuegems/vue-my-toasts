@@ -3,3 +3,141 @@
   --c-brand-light: #dfbb9d;
   --bg-colored-light: #fbe4d6;
 }
+
+/* Tailwind toast styling */
+
+@media (min-width: 1024px) .lg\:inline-flex {
+  display: inline-flex;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.select-none {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.text-indigo-100 {
+  color: #ebf4ff;
+  color: rgba(235, 244, 255, 1);
+}
+
+.relative {
+  position: relative;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.leading-none {
+  line-height: 1;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.bg-blue-400 {
+  background-color: #63b3ed;
+  background-color: rgba(99, 179, 237, 1);
+}
+
+.left-0 {
+  left: 0;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.opacity-25 {
+  opacity: 0.25;
+}
+
+.h-1 {
+  height: 0.25rem;
+}
+
+.bg-white {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
+.block {
+  display: block;
+}
+
+.bg-orange-400 {
+  background-color: #f6ad55;
+  background-color: rgba(246, 173, 85, 1);
+}
+
+.bg-green-400 {
+  background-color: #68d391;
+  background-color: rgba(104, 211, 145, 1);
+}
+
+.bg-red-400 {
+  background-color: #fc8181;
+  background-color: rgba(252, 129, 129, 1);
+}
