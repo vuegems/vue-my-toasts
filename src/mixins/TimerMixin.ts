@@ -39,6 +39,9 @@ const TimerMixin: ComponentOptionsMixin = {
    * and start the timer and requestAnimationFrame loop.
    */
   mounted() {
+    // Don't use duration if it is set to 0.
+    if (!this.duration || this.duration === 0) return
+
     // Hover event
     this.$el.addEventListener('mouseover', () => {
       this.hovered = true
@@ -62,6 +65,9 @@ const TimerMixin: ComponentOptionsMixin = {
    * Remove event listeners for hovering management
    */
   beforeUnmount() {
+    // Don't use duration if it is set to 0.
+    if (!this.duration || this.duration === 0) return
+
     // Hover event
     this.$el.removeEventListener('mouseover', () => {
       this.hovered = true
