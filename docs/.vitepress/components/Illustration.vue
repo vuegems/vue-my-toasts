@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex items-center flex-col">
     <span ref="toast" style="cursor: pointer" @click="playToast">
       <svg
         width="120"
@@ -64,6 +64,8 @@
         </defs>
       </svg>
     </span>
+
+    <span ref="indication" class="text-sm opacity-50">(press to toast)</span>
   </div>
 </template>
 
@@ -83,6 +85,25 @@ const messages = [
 ]
 
 const toast = ref<SVGElement>()
+const indication = ref<HTMLElement>()
+
+const { variant: indicationVariant } = useMotion(indication, {
+  initial: {
+    y: 100,
+    opacity: 0,
+    scale: 0.6,
+  },
+  enter: {
+    y: 0,
+    opacity: 0.5,
+    scale: 1,
+  },
+  hidden: {
+    y: 50,
+    opacity: 0,
+    scale: 0,
+  },
+})
 
 const { variant } = useMotion(toast, {
   initial: {
@@ -142,5 +163,7 @@ const playToast = () => {
   ]
 
   randomElement(toasts)()
+
+  if (indicationVariant.value !== 'hidden') indicationVariant.value = 'hidden'
 }
 </script>
