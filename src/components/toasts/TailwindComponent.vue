@@ -7,7 +7,7 @@
         'mt-2': position.includes('bottom'),
       },
     ]"
-    class="relative overflow-hidden p-3 bg-gray-800 items-center text-indigo-100 leading-none rounded-lg flex lg:inline-flex cursor-pointer select-none"
+    class="relative overflow-hidden p-3 bg-gray-800 items-center text-indigo-100 leading-none rounded-lg flex lg:inline-flex cursor-pointer select-none w-full"
     role="alert"
     @click="$emit('remove')"
   >
