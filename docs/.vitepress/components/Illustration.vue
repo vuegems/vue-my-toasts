@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center flex-col">
+  <div style="display: flex; flex-direction: column">
     <span ref="toast" style="cursor: pointer" @click="playToast">
       <svg
         width="120"
@@ -65,7 +65,12 @@
       </svg>
     </span>
 
-    <span ref="indication" class="text-sm opacity-50">(press to toast)</span>
+    <span
+      ref="indication"
+      style="font-size: 0.75rem; color: black; opacity: 0.5"
+    >
+      (press to toast)
+    </span>
   </div>
 </template>
 
