@@ -7,6 +7,7 @@ import dts from 'rollup-plugin-dts'
 import ignoreImport from 'rollup-plugin-ignore-import'
 import postcss from 'rollup-plugin-postcss'
 import ts from 'rollup-plugin-typescript2'
+import copy from 'rollup-plugin-copy'
 
 const pkg = require('./package.json')
 const name = pkg.name
@@ -112,7 +113,13 @@ const createConfig = (format, output, plugins = []) => {
   // during a single build.
   hasTSChecked = true
 
-  const nodePlugins = [resolve(), commonjs()]
+  const nodePlugins = [
+    resolve(),
+    commonjs(),
+    copy({
+      targets: [{ src: 'src/components/toasts', dest: 'dist' }],
+    }),
+  ]
 
   return {
     input: `src/index.ts`,
