@@ -4,13 +4,13 @@
  * @type {import('vitepress').UserConfig}
  */
 module.exports = {
-  title: '@vuegems/vue-my-toasts',
+  title: 'vue-my-toasts',
   description: '🍞 Provide your component and let us toast the rest',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico', type: 'image/png' }],
     ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
     ['meta', { name: 'author', content: 'Yaël GUILLOUX' }],
-    ['meta', { property: 'og:title', content: '@vuegems/my-toasts' }],
+    ['meta', { property: 'og:title', content: 'vue-my-toasts' }],
     [
       'meta',
       {
@@ -49,16 +49,29 @@ module.exports = {
             link: '/installation',
           },
           {
-            text: 'Quick Start',
-            link: '/quick-start',
-          },
-          {
-            text: 'Roadmap',
-            link: '/roadmap',
-          },
-          {
             text: 'Demo',
             link: '/demo',
+          },
+        ],
+      },
+      {
+        text: 'Usage',
+        children: [
+          {
+            text: 'Configuration',
+            link: '/usage/configuration',
+          },
+          {
+            text: 'Toast Instance',
+            link: '/usage/toast-instance',
+          },
+          {
+            text: 'Options API',
+            link: '/usage/options-api',
+          },
+          {
+            text: 'Composition API',
+            link: '/usage/composition-api',
           },
         ],
       },
