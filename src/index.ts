@@ -69,7 +69,7 @@ const plugin: Plugin = {
     }
 
     // Initialize config
-    _updateConfig(pluginOptions, component)
+    updateConfig(pluginOptions, component)
 
     // Generate VueMyToasts global instance
     const $toasts: VueMyToastsGlobalInstance = {
@@ -77,7 +77,7 @@ const plugin: Plugin = {
       push,
       remove,
       ...helperMethods,
-      updateConfig: _updateConfig,
+      updateConfig,
     }
 
     // Inject into Vue prototype
