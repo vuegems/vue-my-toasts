@@ -8,7 +8,7 @@ module.exports = {
   description: '🍞 Provide your component and let us toast the rest',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico', type: 'image/png' }],
-    ['link', { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' }],
+    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
     ['meta', { name: 'author', content: 'Yaël GUILLOUX' }],
     ['meta', { property: 'og:title', content: '@vuegems/my-toasts' }],
     [
