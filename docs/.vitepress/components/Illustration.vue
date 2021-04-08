@@ -1,5 +1,12 @@
 <template>
-  <div style="display: flex; flex-direction: column">
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    "
+  >
     <span ref="toast" style="cursor: pointer" @click="playToast">
       <svg
         width="120"
@@ -76,8 +83,10 @@
 
 <script setup lang="ts">
 import { useMotion } from '@vueuse/motion'
-import { useToasts } from '@vuegems/my-toasts'
+import { useToasts } from 'vue-my-toasts'
 import { ref } from 'vue'
+
+const randomElement = (array) => array[Math.floor(Math.random() * array.length)]
 
 const messages = [
   `“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” – Martin Fowler`,
@@ -145,8 +154,6 @@ const { variant } = useMotion(toast, {
 })
 
 const { base, error, warning, success } = useToasts()
-
-const randomElement = (array) => array[Math.floor(Math.random() * array.length)]
 
 const positions = [
   'top-left',
