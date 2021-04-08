@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: '@vuegems/my-toasts',
+        find: 'vue-my-toasts',
         replacement: resolve(__dirname, '../src/index.ts'),
       },
     ],
