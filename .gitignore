@@ -1,19 +1,9 @@
 .DS_Store
 node_modules
-public
 dist/
 coverage
-docs/.vuepress/dist
+docs/.vitepress/dist
 demo/dist
-
-# local env files
-.env.local
-.env.*.local
-
-# related test files
-/tests/e2e/reports
-/tests/e2e/videos
-/tests/e2e/screenshots
 
 # editor directories and files
 .idea
