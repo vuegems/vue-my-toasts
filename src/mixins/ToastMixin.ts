@@ -17,6 +17,13 @@ const ToastMixin: ComponentOptionsMixin = {
       required: true,
     },
     /**
+     * Whether the width of the window is smaller than the specified width or not.
+     */
+    full: {
+      type: Boolean,
+      required: true,
+    },
+    /**
      * The type of the toast
      * Accepts: "base", "warning", "error", "success"
      */
