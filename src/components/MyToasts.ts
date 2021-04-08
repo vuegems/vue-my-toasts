@@ -2,6 +2,8 @@ import { MotionDirective, MotionVariants, useMotions } from '@vueuse/motion'
 import {
   defineComponent,
   h,
+  onBeforeMount,
+  onBeforeUnmount,
   PropType,
   Ref,
   ref,
@@ -69,7 +71,25 @@ export default defineComponent({
 
   setup(props) {
     const leaving = ref(false)
+
+    const full = ref(false)
+
     const toasts = ref([]) as Ref<VueMyToastsPayload[]>
+
+    // Handle
+    const handleResize = () => {
+      if (parseInt(props.width) > window.innerWidth) {
+        full.value = true
+      }
+    }
+
+    onBeforeMount(() => {
+      window.addEventListener('resize', handleResize)
+
+      handleResize()
+    })
+
+    onBeforeUnmount(() => window.removeEventListener('resize', handleResize))
 
     /**
      * Add toast to instance
@@ -156,10 +176,12 @@ export default defineComponent({
       add,
       remove,
       leave,
+      full,
     }
   },
 
   render({
+    full,
     position,
     width,
     padding,
@@ -174,7 +196,11 @@ export default defineComponent({
       'div',
       {
         id: 'vue-my-toasts-root',
-        class: ['vue-my-toasts', position],
+        class: [
+          'vue-my-toasts',
+          `vue-my-toasts-${position}`,
+          { 'vue-my-toasts-full': full },
+        ],
         style: {
           '--vueMyToastsWidth': width,
           '--vueMyToastsPadding': padding,
@@ -188,7 +214,10 @@ export default defineComponent({
             css: false,
             onLeave: leave,
             tag: 'ul',
-            class: ['vue-my-toasts-wrapper', position],
+            class: [
+              'vue-my-toasts-wrapper',
+              `vue-my-toasts-wrapper-${position}`,
+            ],
           },
           () =>
             toasts.map((toast: VueMyToastsPayload, index: number) =>
@@ -201,9 +230,10 @@ export default defineComponent({
                   },
                   [
                     h(component, {
-                      class: [position],
+                      class: [`vue-my-toasts-${position}`],
                       index,
                       position,
+                      full,
                       onRemove: () => remove(toast.id),
                       ...toast,
                     }),
