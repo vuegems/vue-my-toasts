@@ -1,14 +1,27 @@
 <template>
-  <button class="try-button" @click="play">Try</button>
+  <button class="try-button" @click="play">{{ text }}</button>
 </template>
 
 <script setup="props" lang="ts">
-import { defineProps } from 'vue-demi'
+import { defineProps } from 'vue'
 import { useToasts } from 'vue-my-toasts'
+import type { VueMyToastsPayload, VueMyToastsOptions } from 'vue-my-toasts'
 
 const props = defineProps({
+  text: {
+    type: String,
+    required: false,
+    default: 'Try',
+  },
   options: {
     type: Object as PropType<VueMyToastsPayload>,
+    required: false,
+    default: {},
+  },
+  config: {
+    type: Object as PropType<VueMyToastsOptions>,
+    required: false,
+    default: {},
   },
 })
 
@@ -24,9 +37,13 @@ const messages = [
   `“Knowledge is power.” – Francis Bacon`,
 ]
 
-const { push } = useToasts()
+const { push, updateConfig } = useToasts()
 
 const play = () => {
+  if (props.config && Object.keys(props.config).length) {
+    updateConfig(props.config)
+  }
+
   push({
     ...props.options,
     message: randomElement(messages),
