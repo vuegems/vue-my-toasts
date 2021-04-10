@@ -37,6 +37,18 @@ The position of the toast list, can be:
 
 `bottom-right`, `bottom-left`, `top-right`, `top-left`, `top-middle`, `bottom-middle`
 
+<div style="display: flex; align-items: center; flex-wrap: wrap; gap: 1rem;">
+  <Try :text="`Try bottom-left`" :config="{ position: 'bottom-left' }" />
+  <Try :text="`Try bottom-middle`" :config="{ position: 'bottom-middle' }" />
+  <Try :text="`Try bottom-right`" :config="{ position: 'bottom-right' }" />
+</div>
+
+<div style="display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
+  <Try :text="`Try top-left`" :config="{ position: 'top-left' }" />
+  <Try :text="`Try top-middle`" :config="{ position: 'top-middle' }" />
+  <Try :text="`Try top-right`" :config="{ position: 'top-right' }" />
+</div>
+
 ```javascript
 Vue.use(VueMyToasts, {
   options: {
