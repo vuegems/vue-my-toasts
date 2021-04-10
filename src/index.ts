@@ -33,16 +33,23 @@ export let pluginOptions: VueMyToastsOptions = {
  */
 export const updateConfig = (
   newOptions: VueMyToastsOptions,
-  userComponent: VueMyToastsComponent,
+  userComponent?: VueMyToastsComponent,
 ) => {
   pluginOptions = {
     ...pluginOptions,
     ...newOptions,
   }
 
-  currentComponent = userComponent
+  if (userComponent) {
+    currentComponent = userComponent
+  }
 
-  _updateConfig(pluginOptions, userComponent)
+  if (!currentComponent) {
+    console.warn('You need to specify a component for your toasts!')
+    return
+  }
+
+  _updateConfig(pluginOptions, currentComponent)
 }
 
 /**
