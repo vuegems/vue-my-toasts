@@ -75,6 +75,19 @@ module.exports = {
           },
         ],
       },
+      {
+        text: 'Create your toast',
+        children: [
+          {
+            text: 'Guide',
+            link: '/create/guide',
+          },
+          {
+            text: 'Defaults',
+            link: '/create/defaults',
+          },
+        ],
+      },
     ],
   },
 }
