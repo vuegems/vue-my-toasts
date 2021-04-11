@@ -10,6 +10,10 @@ npm install vue-my-toasts
 yarn add vue-my-toasts
 ```
 
+Please note that if you are using **Vue 2** or **Nuxt**, you need to install the [**Composition API**](https://v3.vuejs.org/guide/composition-api-introduction.html).
+
+The **required** packages can be found [**here for Vue 2**](https://github.com/vuejs/composition-api), and [**here for Nuxt**](https://composition-api.nuxtjs.org/).
+
 ## Configuration
 
 Inject the plugin to your Vue instance, and configure it using the parameters.
