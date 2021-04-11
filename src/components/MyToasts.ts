@@ -35,10 +35,6 @@ const defaultVariants: VueMyToastsVariantsFunction = (
 export default defineComponent({
   name: 'MyToasts',
 
-  directives: {
-    motion: MotionDirective(),
-  },
-
   props: {
     padding: {
       type: String as PropType<string>,
