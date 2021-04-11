@@ -1,5 +1,6 @@
-import { createApp } from 'vue-demi'
 import MyToasts from '../components/MyToasts'
+import MyToastsCompat from '../components/MyToastsCompat'
+import { createApp, isVue3 } from 'vue-demi'
 import type { VueMyToastsComponent, VueMyToastsOptions } from '../types'
 
 /**
@@ -23,8 +24,14 @@ export default (
   // Append component to body
   document.body.appendChild(rootEl)
 
+  let vueInstance
+
   // Create toasts layer instance
-  const vueInstance = createApp(MyToasts, _props)
+  if (isVue3) {
+    vueInstance = createApp(MyToasts, _props)
+  } else {
+    vueInstance = createApp(MyToastsCompat, _props)
+  }
 
   // Create component
   const vueComponent = vueInstance.mount('#vue-my-toasts')
