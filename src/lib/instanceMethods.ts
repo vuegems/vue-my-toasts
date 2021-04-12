@@ -1,9 +1,9 @@
-import { App, Ref, ref } from 'vue-demi'
+import { App, ref, Ref } from 'vue-demi'
 import type {
   MyToastsInstance,
   VueMyToastsComponent,
   VueMyToastsOptions,
-  VueMyToastsPayload
+  VueMyToastsPayload,
 } from '../types'
 import getUuid from './getUuid'
 import injectComponent from './injectComponent'
@@ -57,7 +57,7 @@ export const remove = (toastId: string) => {
 /**
  * Update the plugin config
  */
-export const updateConfig = async (
+export const updateConfig = (
   pluginOptions: VueMyToastsOptions,
   component: VueMyToastsComponent,
 ) => {
