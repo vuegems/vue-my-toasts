@@ -35,7 +35,7 @@
 </template>
 
 <script lang="ts">
-import defineToastComponent from '../../mixins/defineToastComponent'
+import { defineToastComponent } from 'vue-my-toasts'
 
 export default defineToastComponent({
   name: 'BootstrapComponent',
