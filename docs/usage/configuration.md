@@ -49,12 +49,42 @@ The position of the toast list, can be:
   <Try :text="`Try top-right`" :config="{ position: 'top-right' }" />
 </div>
 
+### `variants`
+
+Toast **animations** are provided by [**useMotion**](https://motion.vueuse.org).
+
+You can use `initial`, `enter`, `leave` variants, so your toasts has **nice** and **smooth** animations.
+
+You can pass **variants** as a **plain object**, or a **toast variant function**.
+
+This function accepts three parameters:
+
+- `position`
+
+  - A string from the [**position**](#position) parameter.
+
+- `toastId`
+
+  - The toast **id**.
+
+- `index`
+  - The toast **index** (position in the toast queue).
+
 ```javascript
 Vue.use(VueMyToasts, {
   options: {
     width: '400px',
     position: 'bottom-right',
     padding: '1rem',
+    variants: (position) => ({
+      initial: {
+        y: position.includes('bottom') ? 50 : -50,
+        opacity: 0,
+        scale: 1,
+      },
+      enter: { y: 0, opacity: 1, scale: 1 },
+      leave: { scale: 0, opacity: 0, height: 0 },
+    }),
   },
 })
 ```
