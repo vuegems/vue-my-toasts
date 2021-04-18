@@ -1,4 +1,4 @@
-import { isVue3, Plugin, Vue2 } from 'vue-demi'
+import { Plugin } from 'vue-demi'
 import helperMethods from './lib/helperMethods'
 import {
   push,
@@ -88,12 +88,8 @@ const plugin: Plugin = {
     }
 
     // Inject into Vue prototype
-    if (isVue3) {
-      app.provide('toasts', $toasts)
-      app.config.globalProperties.$toasts = $toasts
-    } else {
-      Vue2.prototype.$toasts = $toasts
-    }
+    app.provide('toasts', $toasts)
+    app.config.globalProperties.$toasts = $toasts
   },
 }
 
