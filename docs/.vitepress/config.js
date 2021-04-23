@@ -22,7 +22,7 @@ module.exports = {
       'meta',
       {
         property: 'og:image',
-        content: 'https://my-toasts.vuegems.org/logo.svg',
+        content: 'https://vue-my-toasts.vuegems.org/logo.svg',
       },
     ],
     ['meta', { name: 'twitter:creator', content: '@yaeeelglx' }],
@@ -30,12 +30,12 @@ module.exports = {
       'meta',
       {
         name: 'twitter:image',
-        content: 'https://my-toasts.vuegems.org/logo.svg',
+        content: 'https://vue-my-toasts.vuegems.org/logo.svg',
       },
     ],
   ],
   themeConfig: {
-    repo: 'vuegems/my-toasts',
+    repo: 'vuegems/vue-my-toasts',
     sidebar: [
       {
         text: 'Getting Started',
